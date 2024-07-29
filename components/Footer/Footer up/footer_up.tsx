@@ -59,10 +59,13 @@ const Footer: React.FC = () => {
                     <div>
                         <h2 className="font-bold text-lg mb-4 mt-2">Company</h2>
                         <ul>
-                            <li className="mb-2"><a href="#" className="hover:underline">About Us</a></li>
-                            <li className="mb-2"><a href="#" className="hover:underline">Our Services</a></li>
-                            <li className="mb-2"><a href="#" className="hover:underline">Privacy Policy</a></li>
-                            <li className="mb-2"><a href="#" className="hover:underline">Affiliate Program</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">Home</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">About</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">Expertise</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">Skills</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">Blogs</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">Portfolio</a></li>
+                            <li className="mb-2"><a href="#" className="hover:underline">Contact Me</a></li>
                         </ul>
                     </div>
 
@@ -70,7 +73,15 @@ const Footer: React.FC = () => {
                     <ul>
                         <div className="mt-2">
                             <div className="flex flex-col space-y-2">
-                                <h3 className="text-lg font-semibold text-gray-300">Follow Me :</h3>
+                                <h3 className="text-lg font-semibold text-gray-300">
+                                    <span className="text-green-400">{'const '}</span>
+                                    <span className="text-blue-400">followMe</span>
+                                    <span className="text-pink-400"> = </span>
+                                    <span className="text-yellow-400">{'{'}</span>
+                                    <span className="text-red-400">{'"Follow Me"'}:</span>
+                                    <span className="text-blue-400">{' {'}</span>
+                                </h3>
+
                                 <div className="flex space-x-4">
                                     <a href="https://github.com/DharshanSR" className="text-gray-400 hover:text-white p-2 rounded-full border border-gray-400 hover:shadow-[0_0_10px_rgba(255,255,255,0.8)]">
                                         <Image src={GithubIcon} alt="GitHub" width={24} height={24} />
@@ -88,6 +99,12 @@ const Footer: React.FC = () => {
                                         <Image src={MediumIcon} alt="Medium" width={24} height={24} />
                                     </a>
                                 </div>
+
+                                <h3 className="text-lg font-semibold text-gray-300">
+                                    <span className="text-pink-400">{' }'}</span>
+                                    <span className="text-yellow-400">{'};'}</span>
+                                </h3>
+
                             </div>
                         </div>
                     </ul>
