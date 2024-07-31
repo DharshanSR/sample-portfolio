@@ -6,16 +6,20 @@ import Image from "next/image";
 import Expertise from "@/pages/Service/service";
 import About from "@/pages/About/About";
 import Skills from "@/pages/Skills/skills"; // Ensure the component is imported correctly
+import ContactMe from "@/pages/Contact Me/ContactMe";
+import Portfolio from "@/pages/Portfolio/Portfolio";
 
 export default function Home() {
   return (
     <div>
       {/* <Navbar />
-      <About />
-      <Expertise /> */}
-      <Skills />
-      {/* <FooterUp />
-      <FooterDown /> */}
+      <About /> */}
+      {/* <Expertise /> */}
+      {/* <Skills /> */}
+      < Portfolio />
+      {/* <ContactMe /> */}
+      {/* <FooterUp /> */}
+      {/* <FooterDown /> */}
     </div>
   );
 }
