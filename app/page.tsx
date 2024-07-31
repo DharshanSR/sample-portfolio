@@ -12,11 +12,11 @@ import Portfolio from "@/pages/Portfolio/Portfolio";
 export default function Home() {
   return (
     <div>
-      {/* <Navbar />
-      <About /> */}
+      {/* <Navbar /> */}
+      { /*<About /> */}
       {/* <Expertise /> */}
-      {/* <Skills /> */}
-      < Portfolio />
+      <Skills />
+      {/* < Portfolio /> */}
       {/* <ContactMe /> */}
       {/* <FooterUp /> */}
       {/* <FooterDown /> */}

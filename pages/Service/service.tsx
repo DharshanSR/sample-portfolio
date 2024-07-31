@@ -25,13 +25,13 @@ const services = [
     link: "/mobile-app-development", // Link to the page for Mobile App Development
   },
   {
-    title: "Machine Learning",
+    title: "Machine Learning & AI",
     description: "Building advanced machine learning models and intelligent systems that leverage extensive data analysis and predictive modeling. Aimed at enhancing decision-making, automating complex processes, and driving innovation through data-driven insights.",
     animationData: machineLearning,
     link: "/machine-learning", // Link to the page for Machine Learning
   },
   {
-    title: "Blog Writing",
+    title: "Blog & Article Writing",
     description: "Creating insightful and engaging blog content on Medium and other platforms. Sharing expertise and perspectives on technology trends, industry advancements, and best practices to inform and inspire a diverse audience of readers and professionals.",
     animationData: contentWriting,
     link: "/blog-writing", // Link to the page for Blog Writing
