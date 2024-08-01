@@ -1,11 +1,11 @@
 // frameworks.ts
-import AndroidIcon from '@/SVG folder/frameworks/android.svg';
-import BootstrapIcon from '@/SVG folder/frameworks/bootstrap.svg';
-import NodeJSIcon from '@/SVG folder/frameworks/nodejs.svg';
-import ReactIcon from '@/SVG folder/frameworks/react.svg';
-import ReduxIcon from '@/SVG folder/frameworks/redux.svg';
-import SpringIcon from '@/SVG folder/frameworks/spring.svg';
-import VueJSIcon from '@/SVG folder/frameworks/vuejs.svg';
+import AndroidIcon from '@/SVG folder/framework/android.svg';
+import BootstrapIcon from '@/SVG folder/framework/boostrap.svg';
+import NodeJSIcon from '@/SVG folder/framework/nodejs.svg';
+import ReactIcon from '@/SVG folder/framework/react.svg';
+import ReduxIcon from '@/SVG folder/framework/redux.svg';
+import SpringIcon from '@/SVG folder/framework/spring.svg';
+import VueJSIcon from '@/SVG folder/framework/vuejs.svg';
 
 export const frameworks = [
   { name: 'Android', icon: AndroidIcon },

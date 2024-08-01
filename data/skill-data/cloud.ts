@@ -1,10 +1,10 @@
 // toolsAndTechnologies.ts
-import AzureIcon from '@/SVG folder/tools/azure.svg';
-import DockerIcon from '@/SVG folder/tools/docker.svg';
-import FirebaseIcon from '@/SVG folder/tools/firebase.svg';
-import GitHubIcon from '@/SVG folder/tools/github.svg';
-import HerokuIcon from '@/SVG folder/tools/heroku.svg';
-import GitLabIcon from '@/SVG folder/tools/gitlab.svg';
+import AzureIcon from '@/SVG folder/cloud/azure.svg';
+import DockerIcon from '@/SVG folder/cloud/docker.svg';
+import FirebaseIcon from '@/SVG folder/cloud/firebase.svg';
+import GitHubIcon from '@/SVG folder/cloud/github.svg';
+import HerokuIcon from '@/SVG folder/cloud/heroku.svg';
+import GitLabIcon from '@/SVG folder/cloud/gitlab.svg';
 
 export const toolsAndTechnologies = [
   { name: 'Azure', icon: AzureIcon },
