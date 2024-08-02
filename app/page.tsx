@@ -7,6 +7,7 @@ import About from "@/pages/About/About";
 import Skills from "@/pages/Skills/skills"; // Ensure the component is imported correctly
 import ContactMe from "@/pages/Contact Me/ContactMe";
 import Portfolio from "@/pages/Portfolio/Portfolio";
+import Blog from "@/pages/Blogs/Blog";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
       {/* <Navbar />  */}
       {/* <About /> */}
       {/* <Expertise /> */}
+      < Blog />
       {/* <Skills /> */}
-      <Portfolio />
+      {/* <Portfolio /> */}
       {/* <ContactMe />
       <FooterUp />
       <FooterDown /> */}
