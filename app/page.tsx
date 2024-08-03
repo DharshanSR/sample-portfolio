@@ -15,7 +15,7 @@ export default function Home() {
       {/* <Navbar />  */}
       {/* <About /> */}
       {/* <Expertise /> */}
-      < Blog />
+      {/* < Blog /> */}
       {/* <Skills /> */}
       {/* <Portfolio /> */}
       {/* <ContactMe />
