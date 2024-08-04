@@ -84,7 +84,7 @@ const Blog: React.FC = () => {
 
   return (
     <section id="services" className="py-20 bg-sky-950">
-      <div className="container mx-auto text-center bg-sky-950">
+      <div className="container mx-auto text-center">
       <h1 className='text-white font-extrabold text-1xl mb-4'>Blogs</h1>
         <h1 className="text-5xl font-bold mb-8 text-center text-white">My Articles</h1>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
