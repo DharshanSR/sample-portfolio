@@ -14,8 +14,8 @@ export default function Home() {
     <div>
       {/* <Navbar />  */}
       {/* <About /> */}
-      {/* <Expertise /> */}
-      {/* < Blog /> */}
+      {/* <Expertise />
+      < Blog /> */}
       {/* <Skills /> */}
       <Portfolio />
       {/* <ContactMe />
