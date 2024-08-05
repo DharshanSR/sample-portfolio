@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Project, projects } from '@/data/projectData';
+import PageTransition from '@/components/PageTransition';
 
 const Portfolio = () => {
   const [visibleProjects, setVisibleProjects] = useState(6);
@@ -20,9 +21,11 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-sky-950">
+    <PageTransition>
+    <section id="portfolio" className="py-20 bg-sky-950">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-5xl font-bold mb-8 text-center text-white">Portfolio</h1>
+      <h1 className='text-white font-extrabold text-1xl mb-4 text-center'>Portfolio</h1>
+        <h1 className="text-5xl font-bold mb-8 text-center text-white">My Projects</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {projects.slice(0, visibleProjects).map((project) => (
             <div
@@ -40,7 +43,7 @@ const Portfolio = () => {
                 />
               </div>
               <h2 className="text-xl font-bold mb-4 text-center">{project.title}</h2>
-              <p className="text-gray-700 mb-6 text-justify">{project.smallDescription}</p>
+              <p className="text-gray-700 mb-6 text-center">{project.smallDescription}</p>
               <div className="flex justify-center mt-auto">
                 <Link
                   href={`/project/${project.slug}`}
@@ -67,6 +70,7 @@ const Portfolio = () => {
         </div>
       </div>
     </section>
+    </PageTransition>
   );
 };
 

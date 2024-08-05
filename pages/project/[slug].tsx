@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Project, projects } from '../../data/projectData';
 import styles from './ProjectDetail.module.css'; // Import the CSS Module
+import PageTransition from '@/components/PageTransition';
 
 type ProjectProps = {
     project: Project;
@@ -10,6 +11,7 @@ type ProjectProps = {
 
 const ProjectDetail = ({ project }: ProjectProps) => {
     return (
+        <PageTransition>
         <div className={styles.container}>
             <Link href="/" legacyBehavior>
                 <a className={styles.backLink}>
@@ -79,6 +81,7 @@ const ProjectDetail = ({ project }: ProjectProps) => {
                 </div>
             </div>
         </div>
+        </PageTransition>
     );
 };
 
