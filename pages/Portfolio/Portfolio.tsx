@@ -1,65 +1,69 @@
 'use client';
 
-import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import projects from '@/data/project-data/projects';
+import { useState } from 'react';
+import { Project, projects } from '@/data/projectData';
 
-const ShimmerButton: React.FC<{ href?: string; onClick?: () => void; text: string }> = ({ href, onClick, text }) => (
-  <div className="flex justify-center">
-    {href ? (
-      <Link href={href}>
-        <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          {text}
-        </button>
-      </Link>
-    ) : (
-      <button
-        onClick={onClick}
-        className="inline-flex h-10 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-      >
-        {text}
-      </button>
-    )}
-  </div>
-);
+const Portfolio = () => {
+  const [visibleProjects, setVisibleProjects] = useState(6);
+  const [showAll, setShowAll] = useState(false);
+  
+  const handleLoadMore = () => {
+    setShowAll(true);
+    setVisibleProjects(projects.length);
+  };
 
-const Portfolio: React.FC = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  // Limit the number of projects displayed
-  const displayedProjects = isExpanded ? projects : projects.slice(0, 6);
+  const handleShowLess = () => {
+    setShowAll(false);
+    setVisibleProjects(6);
+  };
 
   return (
-    <section id="portfolio" className="py-20 bg-sky-950">
+    <section id="services" className="py-20 bg-sky-950">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-white text-center">My Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProjects.map((project, index) => (
+        <h1 className="text-5xl font-bold mb-8 text-center text-white">Portfolio</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {projects.slice(0, visibleProjects).map((project) => (
             <div
-              key={index}
-              className="relative border rounded-lg p-4 shadow-lg bg-white transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
+              key={project.slug}
+              className="bg-white p-4 shadow-md rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer"
+              style={{ height: '450px' }}
             >
-              <div className="overflow-hidden rounded-lg">
+              <div className="mb-4 w-full h-60 relative overflow-hidden rounded-lg">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  width={500}
-                  height={300}
-                  className="w-full h-64 object-cover mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform transform hover:scale-110"
                 />
               </div>
-              <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-              <p className="mb-4">{project.smallDescription}</p>
-              <ShimmerButton text="Read More" />
+              <h2 className="text-xl font-bold mb-4 text-center">{project.title}</h2>
+              <p className="text-gray-700 mb-6 text-justify">{project.smallDescription}</p>
+              <div className="flex justify-center mt-auto">
+                <Link
+                  href={`/project/${project.slug}`}
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+                >
+                  Read More
+                </Link>
+              </div>
             </div>
           ))}
         </div>
-        <div className="mt-8 text-center">
-          <ShimmerButton
-            onClick={() => setIsExpanded(!isExpanded)}
-            text={isExpanded ? 'View Less' : 'View More'}
-          />
+        <div className="text-center mt-8">
+          {showAll ? (
+            <button onClick={handleShowLess} className="bg-blue-500 text-white px-4 py-2 rounded">
+              View Less
+            </button>
+          ) : (
+            visibleProjects < projects.length && (
+              <button onClick={handleLoadMore} className="bg-blue-500 text-white px-4 py-2 rounded">
+                View More
+              </button>
+            )
+          )}
         </div>
       </div>
     </section>
