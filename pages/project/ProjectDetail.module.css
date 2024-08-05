@@ -3,7 +3,7 @@
     padding: 2rem 1rem;
     max-width: 100%;
     max-height: 100%;
-    background-color: #1e3a8a;
+    background-color: #111827;
     box-sizing: border-box;
     /* Dark blue background */
 }
@@ -19,6 +19,7 @@
     cursor: pointer;
     padding: 0;
     font: inherit;
+    font-size: 18px;
 }
 
 .backLink:hover .backArrow {
@@ -26,16 +27,16 @@
 }
 
 .backArrow {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     margin-right: 8px;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .imageContainer {
@@ -118,7 +119,7 @@
 .description {
     max-width: 100%;
     text-align: justify;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     line-height: 1.6;
 }
@@ -145,17 +146,18 @@
 }
 
 .techBox {
-    background-color: #3b82f6;
+    background-color: #2d3748;
     color: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
+    font-size: 16px;
     white-space: nowrap;
+    font-weight: bold;
 }
 
 .techBox:hover {
-    background-color: #2563eb;
+    background-color: #48bb78;
     cursor: pointer;
 }
 
@@ -175,12 +177,12 @@
 }
 
 .link {
-    color: #3b82f6; /* Tailwind's text-blue-500 */
+    color: #ffffff; /* Tailwind's text-blue-500 */
     text-decoration: none; /* Remove underline for custom styling */
     padding: 0.5rem 1rem; /* Add padding inside the box */
-    border: 2px solid #3b82f6; /* Border with the same color as the text */
+    border: 2px solid #48bb78; /* Border with the same color as the text */
     border-radius: 0.375rem; /* Rounded corners */
-    background-color: #f0f9ff; /* Light blue background */
+    background-color: #2d3748; /* Light blue background */
     display: inline-block; /* Make the link fit the box */
     font-size: 1rem; /* Adjust font size if needed */
     font-weight: 600; /* Tailwind's font-semibold */

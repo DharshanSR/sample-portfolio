@@ -22,7 +22,7 @@ const Portfolio = () => {
 
   return (
     <PageTransition>
-    <section id="portfolio" className="py-20 bg-sky-950">
+    <section id="portfolio" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 py-8">
       <h1 className='text-white font-extrabold text-1xl mb-4 text-center'>Portfolio</h1>
         <h1 className="text-5xl font-bold mb-8 text-center text-white">My Projects</h1>
@@ -30,7 +30,7 @@ const Portfolio = () => {
           {projects.slice(0, visibleProjects).map((project) => (
             <div
               key={project.slug}
-              className="bg-white p-4 shadow-md rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer"
+              className="bg-gray-800 p-4 shadow-md rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer"
               style={{ height: '450px' }}
             >
               <div className="mb-4 w-full h-60 relative overflow-hidden rounded-lg">
@@ -42,12 +42,12 @@ const Portfolio = () => {
                   className="transition-transform transform hover:scale-110"
                 />
               </div>
-              <h2 className="text-xl font-bold mb-4 text-center">{project.title}</h2>
-              <p className="text-gray-700 mb-6 text-center">{project.smallDescription}</p>
+              <h2 className="text-xl font-bold mb-4 text-center text-white">{project.title}</h2>
+              <p className="text-white mb-6 text-center">{project.smallDescription}</p>
               <div className="flex justify-center mt-auto">
                 <Link
                   href={`/project/${project.slug}`}
-                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+                  className="bg-blue-500 text-green-300 px-4 py-2 rounded hover:bg-blue-600 transition"
                 >
                   Read More
                 </Link>

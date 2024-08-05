@@ -51,14 +51,14 @@ const Expertise: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-sky-950">
+    <section id="services" className="py-20 bg-gray-900">
       <div className="container mx-auto text-center">
         <h1 className='text-white font-extrabold text-1xl mb-4'>Expertise</h1>
         <h2 className="text-4xl font-semibold mb-8 text-white">My Services</h2>
         <div className="flex flex-wrap justify-center">
           {services.map((service, index) => (
             <div key={index} className="w-full md:w-1/2 lg:w-1/3 p-4">
-              <div className="relative bg-white rounded-lg shadow-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer group">
+              <div className="relative bg-gray-800 rounded-lg shadow-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer group">
                 {isClient && service.animationData && (
                   <div className="inset-0 flex items-center justify-center overflow-hidden cursor-pointer">
                     <Lottie
@@ -69,8 +69,8 @@ const Expertise: React.FC = () => {
                     />
                   </div>
                 )}
-                <h3 className="text-xl font-bold mb-4 mt-4">{service.title}</h3>
-                <p className="text-gray-700 text-justify mb-12"> {/* Added margin-bottom to create space */}
+                <h3 className="text-xl font-bold mb-4 mt-4 text-green-500">{service.title}</h3>
+                <p className="text-white text-justify mb-12"> {/* Added margin-bottom to create space */}
                   {service.description}
                 </p>
                 <div 

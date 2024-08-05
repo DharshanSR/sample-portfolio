@@ -83,7 +83,7 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-sky-950">
+    <section id="services" className="py-20 bg-gray-900">
       <div className="container mx-auto text-center">
       <h1 className='text-white font-extrabold text-1xl mb-4'>Blogs</h1>
         <h1 className="text-5xl font-bold mb-8 text-center text-white">My Articles</h1>
@@ -91,7 +91,7 @@ const Blog: React.FC = () => {
           {articles.slice(0, visibleCount).map((article, index) => (
             <div
               key={index}
-              className="cursor-pointer bg-white p-6 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+              className="cursor-pointer bg-gray-800 p-6 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
             >
               <div className="relative w-full h-48 mb-4 overflow-hidden rounded-md cursor-pointer">
                 <Image
@@ -102,10 +102,10 @@ const Blog: React.FC = () => {
                   className="transition-transform duration-300 ease-in-out transform hover:scale-110"
                 />
               </div>
-              <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
-              <p className="text-gray-700 mb-4">{article.description}</p>
+              <h2 className="text-2xl font-bold mb-2 text-white">{article.title}</h2>
+              <p className="text-white mb-4">{article.description}</p>
               <a href={article.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                <Button className="transition-colors duration-300 ease-in-out hover:bg-blue-600">
+                <Button className="transition-colors duration-300 ease-in-out hover:bg-blue-600 text-green-300">
                   Read more on {article.platform}
                 </Button>
               </a>
