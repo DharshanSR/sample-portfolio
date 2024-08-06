@@ -23,6 +23,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         garamond: ['Garamond', 'serif'],
+        serif: ['Times New Roman', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

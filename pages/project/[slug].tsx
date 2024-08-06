@@ -33,7 +33,7 @@ const ProjectDetail = ({ project }: ProjectProps) => {
                 <Image
                     src={project.image}
                     alt={project.title}
-                    layout="fill"
+                    fill
                     className={styles.image}
                 />
             </div>
@@ -44,7 +44,7 @@ const ProjectDetail = ({ project }: ProjectProps) => {
                             <Image
                                 src={imgSrc}
                                 alt={`${project.title} additional image ${index + 1}`}
-                                layout="fill"
+                                fill
                                 className={styles.additionalImage}
                             />
                         </div>
