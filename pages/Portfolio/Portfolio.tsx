@@ -8,7 +8,7 @@ import { Project, projects } from '@/data/projectData';
 import PageTransition from '@/components/PageTransition';
 
 const Portfolio = () => {
-  const [visibleProjects, setVisibleProjects] = useState(6);
+  const [visibleProjects, setVisibleProjects] = useState(8);
   const [showAll, setShowAll] = useState(false);
 
   const handleLoadMore = () => {
@@ -18,7 +18,7 @@ const Portfolio = () => {
 
   const handleShowLess = () => {
     setShowAll(false);
-    setVisibleProjects(6);
+    setVisibleProjects(8);
   };
 
   const cardVariants = {
@@ -38,13 +38,13 @@ const Portfolio = () => {
     <PageTransition>
       <section id="portfolio" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4 py-8">
-          <h1 className='text-white font-extrabold text-1xl mb-4 text-center'>Portfolio</h1>
+          <h1 className='text-white font-extrabold text-1xl mb-4 text-center animate-fadeIn'>Portfolio</h1>
           <h1 className="text-5xl font-bold mb-8 text-center text-white">My Projects</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {projects.slice(0, visibleProjects).map((project, index) => (
               <motion.div
                 key={project.slug}
-                className="bg-gray-800 p-4 shadow-md rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                className="bg-gray-800 p-4 shadow-md rounded-lg transition-transform transform hover:shadow-xl hover:translate-x-2 hover:bg-gradient-to-r from-gray-800 to-gray-700 cursor-pointer"
                 style={{ height: '450px' }}
                 variants={cardVariants}
                 initial="hidden"
@@ -65,7 +65,7 @@ const Portfolio = () => {
                 <div className="flex justify-center mt-auto">
                   <Link
                     href={`/project/${project.slug}`}
-                    className="bg-blue-500 text-green-300 px-4 py-2 rounded hover:bg-blue-600 transition"
+                    className="bg-gray-700 text-green-300 px-4 py-2 rounded hover:bg-gray-900 transition"
                   >
                     Read More
                   </Link>
@@ -75,12 +75,12 @@ const Portfolio = () => {
           </div>
           <div className="text-center mt-8">
             {showAll ? (
-              <button onClick={handleShowLess} className="bg-blue-500 text-white px-4 py-2 rounded">
+              <button onClick={handleShowLess} className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition">
                 View Less
               </button>
             ) : (
               visibleProjects < projects.length && (
-                <button onClick={handleLoadMore} className="bg-blue-500 text-white px-4 py-2 rounded">
+                <button onClick={handleLoadMore} className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition">
                   View More
                 </button>
               )

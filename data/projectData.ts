@@ -14,6 +14,7 @@ export type Project = {
     technologies: string[];
     liveLink: string;
     githubLink: string;
+    category: 'web' | 'mobile' | 'ai-ml'; // Add category field
 };
 
 export const projects: Project[] = [
@@ -24,14 +25,14 @@ export const projects: Project[] = [
         fullDescription: `
             <p>This is the first paragraph of the full description for project one.
             This is the second paragraph of the full description for project one. It provides additional details about the project, including its goals and outcomes.</p>
-            <p>This is the third paragraph, which discusses the challenges faced during the development and how they were overcome.This is the first paragraph of the full description for project one.
-            This is the second paragraph of the full description for project one. It provides additional details about the project, including its goals and outcomes.This is the third paragraph, which discusses the challenges faced during the development and how they were overcome.</p>
+            <p>This is the third paragraph, which discusses the challenges faced during the development and how they were overcome.</p>
         `,
         image: Footer,
         additionalImages: [FooterDown, Footer, Footer, Footer, Footer, Footer],
         technologies: ["React", "TypeScript", "Tailwind CSS", "html", "css"],
         liveLink: "https://live-link.com/project-one",
         githubLink: "https://github.com/username/project-one",
+        category: 'web', // Assign category
     },
     {
         title: "Project Two",
@@ -46,6 +47,7 @@ export const projects: Project[] = [
         technologies: ["React", "TypeScript", "Tailwind CSS", "html", "css"],
         liveLink: "https://live-link.com/project-two",
         githubLink: "https://github.com/username/project-two",
+        category: 'mobile', // Assign category
     },
     {
         title: "Project Three",
@@ -60,6 +62,7 @@ export const projects: Project[] = [
         technologies: ["Vue.js", "JavaScript", "Bootstrap"],
         liveLink: "https://live-link.com/project-three",
         githubLink: "https://github.com/username/project-three",
+        category: 'ai-ml', // Assign category
     },
     {
         title: "Project Four",
@@ -75,6 +78,7 @@ export const projects: Project[] = [
         technologies: ["Angular", "TypeScript", "Sass"],
         liveLink: "https://live-link.com/project-four",
         githubLink: "https://github.com/username/project-four",
+        category: 'web', // Assign category
     },
     {
         title: "Project Five",
@@ -90,6 +94,52 @@ export const projects: Project[] = [
         technologies: ["Node.js", "Express", "MongoDB"],
         liveLink: "https://live-link.com/project-five",
         githubLink: "https://github.com/username/project-five",
+        category: 'web', // Assign category
+    },{
+        title: "Project Five",
+        slug: "project-five",
+        smallDescription: "This is a small description for project five.",
+        fullDescription: `
+            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
+            <p>The first paragraph explains the project's architecture and design decisions.</p>
+            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
+            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
+        `,
+        image: Footer,
+        technologies: ["Node.js", "Express", "MongoDB"],
+        liveLink: "https://live-link.com/project-five",
+        githubLink: "https://github.com/username/project-five",
+        category: 'web', // Assign category
+    },{
+        title: "Project Five",
+        slug: "project-five",
+        smallDescription: "This is a small description for project five.",
+        fullDescription: `
+            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
+            <p>The first paragraph explains the project's architecture and design decisions.</p>
+            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
+            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
+        `,
+        image: Footer,
+        technologies: ["Node.js", "Express", "MongoDB"],
+        liveLink: "https://live-link.com/project-five",
+        githubLink: "https://github.com/username/project-five",
+        category: 'web', // Assign category
+    },{
+        title: "Project Five",
+        slug: "project-five",
+        smallDescription: "This is a small description for project five.",
+        fullDescription: `
+            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
+            <p>The first paragraph explains the project's architecture and design decisions.</p>
+            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
+            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
+        `,
+        image: Footer,
+        technologies: ["Node.js", "Express", "MongoDB"],
+        liveLink: "https://live-link.com/project-five",
+        githubLink: "https://github.com/username/project-five",
+        category: 'web', // Assign category
     },
     {
         title: "Project Six",
@@ -105,7 +155,8 @@ export const projects: Project[] = [
         technologies: ["Python", "Django", "PostgreSQL"],
         liveLink: "https://live-link.com/project-six",
         githubLink: "https://github.com/username/project-six",
-    }, {
+        category: 'ai-ml', // Assign category
+    },{
         title: "Project Six",
         slug: "project-six",
         smallDescription: "This is a small description for project six.",
@@ -119,20 +170,7 @@ export const projects: Project[] = [
         technologies: ["Python", "Django", "PostgreSQL"],
         liveLink: "https://live-link.com/project-six",
         githubLink: "https://github.com/username/project-six",
-    }, {
-        title: "Project Six",
-        slug: "project-six",
-        smallDescription: "This is a small description for project six.",
-        fullDescription: `
-            <p>Project six is designed to streamline user workflows and improve efficiency.</p>
-            <p>The initial paragraph discusses the problem statement and the user requirements.</p>
-            <p>The middle paragraph delves into the development approach and features implemented.</p>
-            <p>The final paragraph assesses the project's success and areas for enhancement.</p>
-        `,
-        image: Footer,
-        technologies: ["Python", "Django", "PostgreSQL"],
-        liveLink: "https://live-link.com/project-six",
-        githubLink: "https://github.com/username/project-six",
+        category: 'ai-ml', // Assign category
     },
-    // Add more projects and images as needed
+    // Add more projects and assign categories as needed
 ];

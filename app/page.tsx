@@ -16,8 +16,8 @@ export default function Home() {
       {/* <About />
       <Expertise />
       < Blog /> */}
-      <Skills />
-      {/* <Portfolio /> */}
+      {/* <Skills /> */}
+      <Portfolio />
       {/* <ContactMe /> */}
     </div>
   );
