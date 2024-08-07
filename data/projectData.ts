@@ -95,7 +95,7 @@ export const projects: Project[] = [
         liveLink: "https://live-link.com/project-five",
         githubLink: "https://github.com/username/project-five",
         category: 'web', // Assign category
-    },{
+    }, {
         title: "Project Five",
         slug: "project-five",
         smallDescription: "This is a small description for project five.",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
         liveLink: "https://live-link.com/project-five",
         githubLink: "https://github.com/username/project-five",
         category: 'web', // Assign category
-    },{
+    }, {
         title: "Project Five",
         slug: "project-five",
         smallDescription: "This is a small description for project five.",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
         liveLink: "https://live-link.com/project-five",
         githubLink: "https://github.com/username/project-five",
         category: 'web', // Assign category
-    },{
+    }, {
         title: "Project Five",
         slug: "project-five",
         smallDescription: "This is a small description for project five.",
@@ -156,7 +156,7 @@ export const projects: Project[] = [
         liveLink: "https://live-link.com/project-six",
         githubLink: "https://github.com/username/project-six",
         category: 'ai-ml', // Assign category
-    },{
+    }, {
         title: "Project Six",
         slug: "project-six",
         smallDescription: "This is a small description for project six.",
