@@ -73,10 +73,11 @@ const Expertise: React.FC = () => {
                 <p className="text-white text-justify mb-12"> {/* Added margin-bottom to create space */}
                   {service.description}
                 </p>
-                <div 
+                <div
                   className="absolute bottom-4 right-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
                   onClick={() => handleArrowClick(service.link)}
                 >
+                  <p className="text-white font-bold">Read More</p>
                   {isClient && (
                     <Lottie
                       loop
