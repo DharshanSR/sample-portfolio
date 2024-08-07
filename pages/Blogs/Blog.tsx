@@ -66,13 +66,13 @@ const articles: Article[] = [
     link: 'https://medium.com/@yourprofile/building-scalable-react-apps',
     platform: 'Medium',
     image: FooterImage,
-  },{
+  }, {
     title: 'Building Scalable React Apps',
     description: 'Strategies for building scalable and maintainable React applications.',
     link: 'https://medium.com/@yourprofile/building-scalable-react-apps',
     platform: 'Medium',
     image: FooterImage,
-  },{
+  }, {
     title: 'Building Scalable React Apps',
     description: 'Strategies for building scalable and maintainable React applications.',
     link: 'https://medium.com/@yourprofile/building-scalable-react-apps',
