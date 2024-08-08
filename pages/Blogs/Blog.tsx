@@ -6,7 +6,6 @@ import FooterImage from '@/images/Footer.jpg';
 import WestminsterLogo from '@/images/westminster_logo.png';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import PageTransition from '@/components/PageTransition';
 import useProjectInView from '@/hooks/useProjectInView';
 import ArticleCard from '@/components/ArticleCard';
 
@@ -107,7 +106,6 @@ const Blog: React.FC = () => {
   const { ref: sectionRef, inView: sectionInView } = useProjectInView();
 
   return (
-    <PageTransition>
       <section id="services" className="py-20 bg-gray-900">
         <div className="container mx-auto text-center">
           <h1 className="text-white font-extrabold text-1xl mb-4">Blogs</h1>
@@ -136,7 +134,6 @@ const Blog: React.FC = () => {
           )}
         </div>
       </section>
-    </PageTransition>
   );
 };
 
