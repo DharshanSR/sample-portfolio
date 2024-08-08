@@ -1,16 +1,9 @@
-// components/PageTransition.tsx
 import { motion } from 'framer-motion';
 
 const pageVariants = {
-  initial: {
-    clipPath: 'inset(0 100% 0 0)',
-  },
-  enter: {
-    clipPath: 'inset(0 0% 0 0)',
-  },
-  exit: {
-    clipPath: 'inset(0 0 0 100%)',
-  },
+  initial: { clipPath: 'circle(0% at 50% 50%)', opacity: 0 },
+  enter: { clipPath: 'circle(100% at 50% 50%)', opacity: 1 },
+  exit: { clipPath: 'circle(0% at 50% 50%)', opacity: 0 },
 };
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => (
