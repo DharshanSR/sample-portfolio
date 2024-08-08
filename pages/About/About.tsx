@@ -5,45 +5,95 @@ import Image from 'next/image';
 import CountUp from 'react-countup';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaLaptopCode, FaTrophy } from 'react-icons/fa';
+// import profilePic from '@/images/your_profile_picture.jpg'; // Replace with your image path
 import westminsterLogo from '@/images/westminster_logo.png';
-import esoftLogo from '@/images/esoft_logo.jpg';
+// import esoftLogo from '@/images/esoft_logo.jpg';
 import moratuwaLogo from '@/images/University_of_Moratuwa_logo.png';
 import hinduLogo from '@/images/hindu_college.jpeg';
+import pearsonLogo from '@/images/pearson-logo.png';
 import useProjectInView from '@/hooks/useProjectInView';
 
 const About: React.FC = () => {
   const { ref: aboutRef, inView: aboutInView } = useProjectInView();
   const { ref: statsRef, inView: statsInView } = useProjectInView();
   const { ref: educationRef, inView: educationInView } = useProjectInView();
+  const { ref: imageRef, inView: imageInView } = useProjectInView();
+  const { ref: paragraphRef, inView: paragraphInView } = useProjectInView(); // New ref for paragraph animation
 
   return (
     <section className="py-12 bg-gray-900 text-gray-100">
       <div className="container mx-auto px-4">
 
-        {/* About Me Section */}
+        {/* About Me Heading */}
         <motion.div
           ref={aboutRef}
           initial={{ opacity: 0, y: 50 }}
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl font-semibold text-white mb-6 text-center">About Me</h2>
-          <p className="text-lg leading-relaxed mb-4 text-justify">
-            Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK.
-            With a strong foundation in web development, mobile app development, and machine learning, I am
-            passionate about solving complex problems and crafting innovative solutions that drive progress.
-          </p>
-          <p className="text-lg leading-relaxed mb-4 text-justify">
-            My expertise spans across modern technologies such as Next.js, TypeScript, and Tailwind CSS. I am
-            committed to continuous learning and stay engaged with the latest industry trends. Outside of coding,
-            I enjoy writing insightful blogs, exploring new technologies, and collaborating on impactful projects.
-          </p>
-          <p className="text-lg leading-relaxed text-justify">
-            I am eager to contribute to dynamic teams and take on new challenges. My goal is to apply my skills
-            and knowledge to deliver exceptional results and make a meaningful impact in the tech industry.
-          </p>
+          <h2 className="text-5xl font-semibold text-white">About Me</h2>
         </motion.div>
+
+        {/* About Me Content */}
+        <div className="flex flex-col items-center md:flex-row mb-12">
+          {/* Profile Image with Entry Animation */}
+          <motion.div
+            ref={imageRef}
+            initial={{ opacity: 0, x: 50 }}
+            animate={imageInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="w-full md:w-1/3 flex justify-center mt-8 md:mt-0"
+          >
+            <Image
+              src={westminsterLogo} // Replace with your actual profile image
+              alt="Ravindran Dharshan"
+              width={400}
+              height={420}
+              className="rounded-full shadow-lg"
+            />
+          </motion.div>
+
+          <div className="md:w-2/3 mt-8 md:mt-0">
+            {/* Paragraph 1 */}
+            <motion.div
+              ref={paragraphRef}
+              initial={{ opacity: 0, y: 20 }}
+              animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="text-lg leading-relaxed mb-4 text-justify"
+            >
+              Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK.
+              With a strong foundation in web development, mobile app development, and machine learning, I am
+              passionate about solving complex problems and crafting innovative solutions that drive progress.
+            </motion.div>
+
+            {/* Paragraph 2 */}
+            <motion.div
+              ref={paragraphRef}
+              initial={{ opacity: 0, y: 20 }}
+              animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-lg leading-relaxed mb-4 text-justify"
+            >
+              My expertise spans across modern technologies such as Next.js, TypeScript, and Tailwind CSS. I am
+              committed to continuous learning and stay engaged with the latest industry trends. Outside of coding,
+              I enjoy writing insightful blogs, exploring new technologies, and collaborating on impactful projects.
+            </motion.div>
+
+            {/* Paragraph 3 */}
+            <motion.div
+              ref={paragraphRef}
+              initial={{ opacity: 0, y: 20 }}
+              animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-lg leading-relaxed text-justify"
+            >
+              I am eager to contribute to dynamic teams and take on new challenges. My goal is to apply my skills
+              and knowledge to deliver exceptional results and make a meaningful impact in the tech industry.
+            </motion.div>
+          </div>
+        </div>
 
         {/* Stats Section */}
         <motion.div
@@ -124,13 +174,13 @@ const About: React.FC = () => {
 
             <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
-                src={esoftLogo}
+                src={pearsonLogo}
                 alt="ABC Institute"
-                width={120}
-                height={120}
+                width={160}
+                height={160}
                 className="border-gray-700 mb-4"
               />
-              <div className="text-center">
+              <div className="text-center mt-8">
                 <strong className="text-xl text-white">Diploma in English</strong>
                 <br />
                 ESoft Metro Campus, Colombo, Sri Lanka
