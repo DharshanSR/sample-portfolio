@@ -44,7 +44,7 @@ const Portfolio = () => {
             Portfolio
           </motion.h1>
           <motion.h2
-            className="text-3xl sm:text-5xl font-bold mb-8 text-center text-white"
+            className="text-5xl sm:text-5xl font-bold mb-8 text-center text-white"
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
             variants={sectionVariants}
