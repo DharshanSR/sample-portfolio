@@ -5,8 +5,10 @@ import Image, { StaticImageData } from 'next/image';
 import FooterImage from '@/images/Footer.jpg';
 import WestminsterLogo from '@/images/westminster_logo.png';
 import { Button } from '@/components/ui/button';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import PageTransition from '@/components/PageTransition';
+import useProjectInView from '@/hooks/useProjectInView';
+import ArticleCard from '@/components/ArticleCard';
 
 interface Article {
   title: string;
@@ -102,64 +104,39 @@ const Blog: React.FC = () => {
   };
 
   // Use `useInView` to track when the section is in view
-  const { ref: sectionRef, inView: sectionInView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.2, // When 20% of the element is visible
-  });
+  const { ref: sectionRef, inView: sectionInView } = useProjectInView();
 
   return (
-    <section id="services" className="py-20 bg-gray-900">
-      <div className="container mx-auto text-center">
-        <h1 className='text-white font-extrabold text-1xl mb-4'>Blogs</h1>
-        <h1 className="text-5xl font-bold mb-8 text-center text-white">My Articles</h1>
-        <motion.div
-          ref={sectionRef}
-          initial="hidden"
-          animate={sectionInView ? "visible" : "hidden"}
-          variants={sectionVariants}
-          transition={{ duration: 0.5 }}
-          className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-        >
-          {articles.slice(0, visibleCount).map((article, index) => (
-            <motion.div
-              key={index}
-              className="cursor-pointer bg-gray-800 p-6 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
-              variants={sectionVariants}
-              initial="hidden"
-              animate={sectionInView ? "visible" : "hidden"}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-            >
-              <div className="relative w-full h-48 mb-4 overflow-hidden rounded-md cursor-pointer">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300 ease-in-out transform hover:scale-110"
-                />
-              </div>
-              <h2 className="text-2xl font-bold mb-2 text-white">{article.title}</h2>
-              <p className="text-white mb-4">{article.description}</p>
-              <a href={article.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                <Button className="transition-colors duration-300 ease-in-out hover:bg-blue-600 text-green-300">
-                  Read more on {article.platform}
-                </Button>
-              </a>
-            </motion.div>
-          ))}
-        </motion.div>
-        {visibleCount < articles.length && (
-          <div className="text-center mt-8">
-            <Button
-              onClick={handleLoadMore}
-              className="bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out"
-            >
-              Load More
-            </Button>
-          </div>
-        )}
-      </div>
-    </section>
+    <PageTransition>
+      <section id="services" className="py-20 bg-gray-900">
+        <div className="container mx-auto text-center">
+          <h1 className="text-white font-extrabold text-1xl mb-4">Blogs</h1>
+          <h1 className="text-5xl font-bold mb-8 text-center text-white">My Articles</h1>
+          <motion.div
+            ref={sectionRef}
+            initial="hidden"
+            animate={sectionInView ? "visible" : "hidden"}
+            variants={sectionVariants}
+            transition={{ duration: 0.5 }}
+            className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          >
+            {articles.slice(0, visibleCount).map((article, index) => (
+              <ArticleCard key={index} article={article} index={index} />
+            ))}
+          </motion.div>
+          {visibleCount < articles.length && (
+            <div className="text-center mt-8">
+              <Button
+                onClick={handleLoadMore}
+                className="bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out"
+              >
+                Load More
+              </Button>
+            </div>
+          )}
+        </div>
+      </section>
+    </PageTransition>
   );
 };
 
