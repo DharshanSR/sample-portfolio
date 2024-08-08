@@ -96,54 +96,54 @@ export const projects: Project[] = [
         githubLink: "https://github.com/username/project-five",
         category: 'web', // Assign category
     }, {
-        title: "Project Five",
-        slug: "project-five",
-        smallDescription: "This is a small description for project five.",
-        fullDescription: `
-            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
-            <p>The first paragraph explains the project's architecture and design decisions.</p>
-            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
-            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
-        `,
-        image: Footer,
-        technologies: ["Node.js", "Express", "MongoDB"],
-        liveLink: "https://live-link.com/project-five",
-        githubLink: "https://github.com/username/project-five",
-        category: 'web', // Assign category
-    }, {
-        title: "Project Five",
-        slug: "project-five",
-        smallDescription: "This is a small description for project five.",
-        fullDescription: `
-            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
-            <p>The first paragraph explains the project's architecture and design decisions.</p>
-            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
-            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
-        `,
-        image: Footer,
-        technologies: ["Node.js", "Express", "MongoDB"],
-        liveLink: "https://live-link.com/project-five",
-        githubLink: "https://github.com/username/project-five",
-        category: 'web', // Assign category
-    }, {
-        title: "Project Five",
-        slug: "project-five",
-        smallDescription: "This is a small description for project five.",
-        fullDescription: `
-            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
-            <p>The first paragraph explains the project's architecture and design decisions.</p>
-            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
-            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
-        `,
-        image: Footer,
-        technologies: ["Node.js", "Express", "MongoDB"],
-        liveLink: "https://live-link.com/project-five",
-        githubLink: "https://github.com/username/project-five",
-        category: 'web', // Assign category
-    },
-    {
         title: "Project Six",
         slug: "project-six",
+        smallDescription: "This is a small description for project five.",
+        fullDescription: `
+            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
+            <p>The first paragraph explains the project's architecture and design decisions.</p>
+            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
+            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
+        `,
+        image: Footer,
+        technologies: ["Node.js", "Express", "MongoDB"],
+        liveLink: "https://live-link.com/project-five",
+        githubLink: "https://github.com/username/project-five",
+        category: 'web', // Assign category
+    }, {
+        title: "Project Seven",
+        slug: "project-seven",
+        smallDescription: "This is a small description for project five.",
+        fullDescription: `
+            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
+            <p>The first paragraph explains the project's architecture and design decisions.</p>
+            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
+            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
+        `,
+        image: Footer,
+        technologies: ["Node.js", "Express", "MongoDB"],
+        liveLink: "https://live-link.com/project-five",
+        githubLink: "https://github.com/username/project-five",
+        category: 'mobile', // Assign category
+    }, {
+        title: "Project Ten",
+        slug: "project-ten",
+        smallDescription: "This is a small description for project five.",
+        fullDescription: `
+            <p>In this project, the focus was on creating a scalable application with a microservices architecture.</p>
+            <p>The first paragraph explains the project's architecture and design decisions.</p>
+            <p>The second paragraph details the implementation phases and any hurdles encountered.</p>
+            <p>The final paragraph highlights the achievements and lessons learned from the project.</p>
+        `,
+        image: Footer,
+        technologies: ["Node.js", "Express", "MongoDB"],
+        liveLink: "https://live-link.com/project-five",
+        githubLink: "https://github.com/username/project-five",
+        category: 'ai-ml', // Assign category
+    },
+    {
+        title: "Project Eight",
+        slug: "project-eight",
         smallDescription: "This is a small description for project six.",
         fullDescription: `
             <p>Project six is designed to streamline user workflows and improve efficiency.</p>
@@ -157,8 +157,8 @@ export const projects: Project[] = [
         githubLink: "https://github.com/username/project-six",
         category: 'ai-ml', // Assign category
     }, {
-        title: "Project Six",
-        slug: "project-six",
+        title: "Project Nine",
+        slug: "project-nine",
         smallDescription: "This is a small description for project six.",
         fullDescription: `
             <p>Project six is designed to streamline user workflows and improve efficiency.</p>
