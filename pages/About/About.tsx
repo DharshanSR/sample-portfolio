@@ -3,16 +3,31 @@
 import React from 'react';
 import Image from 'next/image';
 import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
 import { FaBriefcase, FaLaptopCode, FaTrophy } from 'react-icons/fa';
 import westminsterLogo from '@/images/westminster_logo.png';
 import esoftLogo from '@/images/esoft_logo.jpg';
+import moratuwaLogo from '@/images/University_of_Moratuwa_logo.png';
+import hinduLogo from '@/images/hindu_college.jpeg';
+import useProjectInView from '@/hooks/useProjectInView';
 
 const About: React.FC = () => {
+  const { ref: aboutRef, inView: aboutInView } = useProjectInView();
+  const { ref: statsRef, inView: statsInView } = useProjectInView();
+  const { ref: educationRef, inView: educationInView } = useProjectInView();
+
   return (
     <section className="py-12 bg-gray-900 text-gray-100">
       <div className="container mx-auto px-4">
+
         {/* About Me Section */}
-        <div className="mb-12">
+        <motion.div
+          ref={aboutRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
           <h2 className="text-4xl font-semibold text-white mb-6 text-center">About Me</h2>
           <p className="text-lg leading-relaxed mb-4 text-justify">
             Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK.
@@ -28,10 +43,16 @@ const About: React.FC = () => {
             I am eager to contribute to dynamic teams and take on new challenges. My goal is to apply my skills
             and knowledge to deliver exceptional results and make a meaningful impact in the tech industry.
           </p>
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
-        <div className="flex flex-wrap justify-center md:justify-around mb-12">
+        <motion.div
+          ref={statsRef}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={statsInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          className="flex flex-wrap justify-center md:justify-around mb-12"
+        >
           <div className="text-center mb-8 md:mb-0 flex flex-col items-center px-4 md:px-0">
             <FaBriefcase className="text-6xl text-cyan-400 mb-2" />
             <p className="text-4xl font-bold text-cyan-400">
@@ -53,42 +74,91 @@ const About: React.FC = () => {
             </p>
             <p className="text-lg font-medium">Awards</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Education Section */}
-        <div className="mb-12">
+        <motion.div
+          ref={educationRef}
+          initial={{ opacity: 0, x: -50 }}
+          animate={educationInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
           <h2 className="text-3xl font-semibold text-white mb-6">Education</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-center bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
                 src={westminsterLogo}
                 alt="University of Westminster"
-                width={100}
-                height={100}
-                className="mr-6 rounded-full"
+                width={140}
+                height={140}
+                className="border-gray-700 mb-4"
               />
-              <div>
-                <strong className="text-xl text-white">Bachelor of Engineering in Software Engineering</strong><br />
-                University of Westminster, London, United Kingdom<br />
-                <div className='text-green-500'>2023 - Present<br /></div>
+              <div className="text-center">
+                <strong className="text-xl text-white">
+                  Bachelor of Engineering in Software Engineering
+                </strong>
+                <br />
+                University of Westminster, London, United Kingdom
+                <br />
+                <div className="text-green-500">2023 - Present<br /></div>
               </div>
             </div>
-            <div className="flex items-center bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl">
+
+            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
+              <Image
+                src={moratuwaLogo}
+                alt="University of Moratuwa"
+                width={140}
+                height={140}
+                className="border-gray-700 mb-4"
+              />
+              <div className="text-center">
+                <strong className="text-xl text-white">Full Stack Developer Trainee</strong>
+                <br />
+                University of Moratuwa, Colombo, Sri Lanka
+                <br />
+                <div className="text-green-500">2023 - Present<br /></div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
                 src={esoftLogo}
                 alt="ABC Institute"
-                width={100}
-                height={100}
-                className="mr-6 rounded-full"
+                width={120}
+                height={120}
+                className="border-gray-700 mb-4"
               />
-              <div>
-                <strong className="text-xl text-white">Diploma in English</strong><br />
-                ESoft Metro Campus, Colombo, Sri Lanka<br />
-                <div className='text-green-500'>2022 - 2023<br /></div>
+              <div className="text-center">
+                <strong className="text-xl text-white">Diploma in English</strong>
+                <br />
+                ESoft Metro Campus, Colombo, Sri Lanka
+                <br />
+                <div className="text-green-500">2022 - 2023<br /></div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
+              <Image
+                src={hinduLogo}
+                alt="ABC Institute"
+                width={120}
+                height={120}
+                className="border-gray-700 mb-4"
+              />
+              <div className="text-center">
+                <strong className="text-xl text-white">Diploma in English</strong>
+                <br />
+                ESoft Metro Campus, Colombo, Sri Lanka
+                <br />
+                <div className="text-green-500">2022 - 2023<br /></div>
               </div>
             </div>
           </div>
-        </div>
+
+        </motion.div>
+
       </div>
     </section>
   );
