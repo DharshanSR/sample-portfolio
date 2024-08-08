@@ -70,7 +70,7 @@ const Expertise: React.FC = () => {
     <section id="services" className="py-20 bg-gray-900">
       <div className="container mx-auto text-center">
         <h1 className='text-white font-extrabold text-1xl mb-4'>Expertise</h1>
-        <h2 className="text-5xl font-semibold mb-8 text-white">My Services</h2>
+        <h2 className="text-5xl font-semibold mb-8 text-white">Areas of Expertise</h2>
         <motion.div
           ref={sectionRef}
           initial="hidden"

@@ -134,7 +134,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-semibold text-white mb-6">Education</h2>
+          <h2 className="text-3xl font-semibold text-white mb-6 mt-6">Education</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image

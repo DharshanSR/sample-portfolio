@@ -73,7 +73,7 @@ const articles: Article[] = [
     link: 'https://dev.to/yourprofile/css-grid-vs-flexbox',
     platform: 'Dev.to',
     image: WestminsterLogo,
-  },{
+  }, {
     title: 'CSS Grid vs. Flexbox',
     description: 'Comparing CSS Grid and Flexbox for layout design.',
     link: 'https://dev.to/yourprofile/css-grid-vs-flexbox',
@@ -103,20 +103,20 @@ const Blog: React.FC = () => {
 
   // Entry animation for the "Load More" button
   const buttonVariants = {
-  hidden: { scale: 0.8, rotate: -10, opacity: 0 },
-  visible: {
-    scale: 1,
-    rotate: 0,
-    opacity: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
-};
+    hidden: { scale: 0.8, rotate: -10, opacity: 0 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
 
   return (
     <section id="services" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-white font-extrabold text-2xl mb-4">Blogs</h1>
-        <h2 className="text-5xl font-bold mb-8 text-white">My Articles</h2>
+        <h2 className="text-5xl font-bold mb-12 text-white">My Articles</h2>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -143,9 +143,9 @@ const Blog: React.FC = () => {
           >
             <Button
               onClick={handleLoadMore}
-              className="bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out"
+              className="bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-300 ease-in-out mt-10"
             >
-              Load More
+              Explore More
             </Button>
           </motion.div>
         )}
