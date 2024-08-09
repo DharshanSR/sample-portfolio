@@ -18,7 +18,7 @@ export default function Home() {
       < Blog />
       {/* <Skills /> */}
       <Portfolio />
-      {/* <ContactMe /> */}
+      <ContactMe />
     </div>
   );
 }
