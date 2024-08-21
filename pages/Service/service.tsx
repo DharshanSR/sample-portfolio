@@ -67,9 +67,24 @@ const Expertise: React.FC = () => {
   const { ref: sectionRef, inView: sectionInView } = useProjectInView();
 
   return (
-    <section id="services" className="py-20 bg-gray-900">
-      <div className="container mx-auto text-center">
-        <h1 className='text-white font-extrabold text-1xl mb-4'>Expertise</h1>
+    <section id="services" className="relative bg-gray-900">
+      {/* Top SVG Divider */}
+      <div className="w-full overflow-hidden">
+        <svg
+          className="w-full h-24"
+          viewBox="0 0 1200 120"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0 C150,100 350,100 500,50 C650,0 850,0 1200,50 L1200,00 L0,0 Z"
+            className="fill-current text-gray-700"
+          ></path>
+        </svg>
+      </div>
+
+      <div className="container mx-auto text-center py-20">
+        <h1 className="text-white font-extrabold text-1xl mb-4">Expertise</h1>
         <h2 className="text-5xl font-semibold mb-8 text-white">Areas of Expertise</h2>
         <motion.div
           ref={sectionRef}
@@ -119,6 +134,21 @@ const Expertise: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+
+      {/* Bottom SVG Divider */}
+      <div className="w-full overflow-hidden">
+        <svg
+          className="w-full h-16"
+          viewBox="0 0 1200 120"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,50 C350,100 650,100 800,50 C950,0 1200,0 1200,0 L1200,120 L0,120 Z"
+            className="fill-current text-gray-700"
+          ></path>
+        </svg>
       </div>
     </section>
   );

@@ -12,12 +12,12 @@ export default function Home() {
   return (
     <div>
       {/* <Navbar />  */}
-      <Entrance />
-      <About />
+      {/* <Entrance />
+      <About /> */}
       <Expertise />
       < Blog />
       {/* <Skills /> */}
-      <Portfolio />
+      {/* <Portfolio /> */}
       {/* <ContactMe /> */}
     </div>
   );
