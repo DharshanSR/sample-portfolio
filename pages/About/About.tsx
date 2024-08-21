@@ -5,20 +5,34 @@ import Image from 'next/image';
 import CountUp from 'react-countup';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaLaptopCode, FaTrophy } from 'react-icons/fa';
-// import profilePic from '@/images/your_profile_picture.jpg'; // Replace with your image path
 import westminsterLogo from '@/images/westminster_logo.png';
-// import esoftLogo from '@/images/esoft_logo.jpg';
 import moratuwaLogo from '@/images/University_of_Moratuwa_logo.png';
 import hinduLogo from '@/images/hindu_college.jpeg';
 import pearsonLogo from '@/images/pearson-logo.png';
 import useProjectInView from '@/hooks/useProjectInView';
+
+// Reusable Paragraph Component with Animation
+const AnimatedParagraph: React.FC<{ text: string; delay: number }> = ({ text, delay }) => {
+  const { ref: paragraphRef, inView: paragraphInView } = useProjectInView();
+
+  return (
+    <motion.div
+      ref={paragraphRef}
+      initial={{ opacity: 0, y: 20 }}
+      animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay }}
+      className="text-lg leading-relaxed mb-4 text-justify"
+    >
+      {text}
+    </motion.div>
+  );
+};
 
 const About: React.FC = () => {
   const { ref: aboutRef, inView: aboutInView } = useProjectInView();
   const { ref: statsRef, inView: statsInView } = useProjectInView();
   const { ref: educationRef, inView: educationInView } = useProjectInView();
   const { ref: imageRef, inView: imageInView } = useProjectInView();
-  const { ref: paragraphRef, inView: paragraphInView } = useProjectInView(); // New ref for paragraph animation
 
   return (
     <section className="py-12 bg-gray-900 text-gray-100">
@@ -47,7 +61,7 @@ const About: React.FC = () => {
           >
             <Image
               src={westminsterLogo} // Replace with your actual profile image
-              alt="Ravindran Dharshan"
+              alt="University of Westminster Logo"
               width={400}
               height={420}
               className="rounded-full shadow-lg"
@@ -55,43 +69,19 @@ const About: React.FC = () => {
           </motion.div>
 
           <div className="md:w-2/3 mt-8 md:mt-0">
-            {/* Paragraph 1 */}
-            <motion.div
-              ref={paragraphRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="text-lg leading-relaxed mb-4 text-justify"
-            >
-              Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK.
-              With a strong foundation in web development, mobile app development, and machine learning, I am
-              passionate about solving complex problems and crafting innovative solutions that drive progress.
-            </motion.div>
-
-            {/* Paragraph 2 */}
-            <motion.div
-              ref={paragraphRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg leading-relaxed mb-4 text-justify"
-            >
-              My expertise spans across modern technologies such as Next.js, TypeScript, and Tailwind CSS. I am
-              committed to continuous learning and stay engaged with the latest industry trends. Outside of coding,
-              I enjoy writing insightful blogs, exploring new technologies, and collaborating on impactful projects.
-            </motion.div>
-
-            {/* Paragraph 3 */}
-            <motion.div
-              ref={paragraphRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg leading-relaxed text-justify"
-            >
-              I am eager to contribute to dynamic teams and take on new challenges. My goal is to apply my skills
-              and knowledge to deliver exceptional results and make a meaningful impact in the tech industry.
-            </motion.div>
+            {/* Paragraphs with Animation */}
+            <AnimatedParagraph
+              text="Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK. With a strong foundation in web development, mobile app development, and machine learning, I am passionate about solving complex problems and crafting innovative solutions that drive progress."
+              delay={0.2}
+            />
+            <AnimatedParagraph
+              text="My expertise spans across modern technologies such as Next.js, TypeScript, and Tailwind CSS. I am committed to continuous learning and stay engaged with the latest industry trends. Outside of coding, I enjoy writing insightful blogs, exploring new technologies, and collaborating on impactful projects."
+              delay={0.4}
+            />
+            <AnimatedParagraph
+              text="I am eager to contribute to dynamic teams and take on new challenges. My goal is to apply my skills and knowledge to deliver exceptional results and make a meaningful impact in the tech industry."
+              delay={0.6}
+            />
           </div>
         </div>
 
@@ -139,7 +129,7 @@ const About: React.FC = () => {
             <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
                 src={westminsterLogo}
-                alt="University of Westminster"
+                alt="University of Westminster Logo"
                 width={140}
                 height={140}
                 className="border-gray-700 mb-4"
@@ -158,7 +148,7 @@ const About: React.FC = () => {
             <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
                 src={moratuwaLogo}
-                alt="University of Moratuwa"
+                alt="University of Moratuwa Logo"
                 width={140}
                 height={140}
                 className="border-gray-700 mb-4"
@@ -175,7 +165,7 @@ const About: React.FC = () => {
             <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
                 src={pearsonLogo}
-                alt="ABC Institute"
+                alt="Pearson Institute Logo"
                 width={160}
                 height={160}
                 className="border-gray-700 mb-4"
@@ -192,23 +182,21 @@ const About: React.FC = () => {
             <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
               <Image
                 src={hinduLogo}
-                alt="ABC Institute"
+                alt="Hindu College Logo"
                 width={120}
                 height={120}
                 className="border-gray-700 mb-4"
               />
               <div className="text-center">
-                <strong className="text-xl text-white">Diploma in English</strong>
+                <strong className="text-xl text-white">High School Diploma</strong>
                 <br />
-                ESoft Metro Campus, Colombo, Sri Lanka
+                Hindu College, Colombo, Sri Lanka
                 <br />
-                <div className="text-green-500">2022 - 2023<br /></div>
+                <div className="text-green-500">2010 - 2021<br /></div>
               </div>
             </div>
           </div>
-
         </motion.div>
-
       </div>
     </section>
   );
