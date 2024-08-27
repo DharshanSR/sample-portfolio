@@ -3,6 +3,15 @@
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import FooterImage from '@/images/Footer.jpg';
+import setupImage from '@/images/setup.png';
+import componentImage from '@/images/component.png';
+import propsStateImage from '@/images/props.png';
+import aiImage from '@/images/airole.png';
+import scalableImage from '@/images/scalability-in-system-design.png';
+import mfaImage from '@/images/MFA-blog.png';
+import machineLearningImage from '@/images/comprehensive.png';
+import pageRoutingImage from '@/images/gynamic-routes.png';
+import iotImage from '@/images/iot.png';
 import WestminsterLogo from '@/images/westminster_logo.png';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
@@ -18,67 +27,67 @@ interface Article {
 
 const articles: Article[] = [
   {
-    title: 'Understanding TypeScript',
-    description: 'A comprehensive guide to getting started with TypeScript.',
-    link: 'https://medium.com/@yourprofile/understanding-typescript',
+    title: 'How to Set Up a React Project Using Vite',
+    description: 'Learn how to set up a React project using Vite.',
+    link: 'https://medium.com/@dharshanravindran8/how-to-set-up-a-react-project-using-vite-48d544728caf',
     platform: 'Medium',
-    image: FooterImage,
+    image: setupImage,
   },
   {
-    title: 'React Hooks: A Deep Dive',
-    description: 'Exploring the powerful world of React Hooks.',
-    link: 'https://dev.to/yourprofile/react-hooks-a-deep-dive',
-    platform: 'Dev.to',
-    image: WestminsterLogo,
-  },
-  // Add more articles here
-  {
-    title: 'Understanding TypeScript',
-    description: 'A comprehensive guide to getting started with TypeScript.',
-    link: 'https://medium.com/@yourprofile/understanding-typescript',
+    title: 'Class vs. Functional Components in React',
+    description: 'Understanding the difference class and functional components in React.',
+    link: 'https://medium.com/@dharshanravindran8/understanding-react-components-class-components-vs-functional-components-481c3c4efdee',
     platform: 'Medium',
-    image: FooterImage,
+    image: componentImage,
   },
   {
-    title: 'React Hooks: A Deep Dive',
-    description: 'Exploring the powerful world of React Hooks.',
+    title: 'State and Props in React Explained',
+    description: 'Understanding the difference between state and props in React.',
+    link: 'https://medium.com/@dharshanravindran8/state-and-props-in-react-cd199c3055e1',
+    platform: 'Medium',
+    image: propsStateImage,
+  },
+  {
+    title: 'The Role of AI in Modern Software Development',
+    description: 'Exploring how AI transforming software development practices and tools.',
     link: 'https://dev.to/yourprofile/react-hooks-a-deep-dive',
-    platform: 'Dev.to',
-    image: WestminsterLogo,
+    platform: 'Medium',
+    image: aiImage,
   },
   {
-    title: 'Advanced TypeScript Tips',
-    description: 'Deep dive into advanced TypeScript features and best practices.',
+    title: 'How to Build Scalable Software Systems: Key Principles and Techniques',
+    description: 'Principles and Techniques for Scalable Software Design.',
     link: 'https://medium.com/@yourprofile/advanced-typescript-tips',
     platform: 'Medium',
-    image: FooterImage,
+    image: scalableImage,
   },
   {
-    title: 'State Management with Redux',
-    description: 'Understanding state management using Redux in React.',
+    title: 'How to Implement Multi-Factor Authentication (MFA) in Your Apps',
+    description: 'A guide to adding multi-factor authentication to enhance app security.',
     link: 'https://dev.to/yourprofile/state-management-with-redux',
     platform: 'Dev.to',
-    image: WestminsterLogo,
+    image: mfaImage,
   },
   {
-    title: 'Building Scalable React Apps',
-    description: 'Strategies for building scalable and maintainable React applications.',
+    title: 'Getting Started with Machine Learning: A Comprehensive Guide',
+    description: 'An introduction to machine learning concepts and how to get started.',
     link: 'https://medium.com/@yourprofile/building-scalable-react-apps',
     platform: 'Medium',
-    image: FooterImage,
+    image: machineLearningImage,
   },
   {
-    title: 'CSS Grid vs. Flexbox',
-    description: 'Comparing CSS Grid and Flexbox for layout design.',
+    title: 'Understanding Next.js Pages and Routing: A Comprehensive Overview',
+    description: 'An overview of how Next.js handles pages and routing for your applications.',
     link: 'https://dev.to/yourprofile/css-grid-vs-flexbox',
     platform: 'Dev.to',
-    image: WestminsterLogo,
-  }, {
-    title: 'CSS Grid vs. Flexbox',
-    description: 'Comparing CSS Grid and Flexbox for layout design.',
+    image: pageRoutingImage,
+  },
+  {
+    title: 'Unlocking the Potential of IoT: Key Design Strategies',
+    description: 'An overview of key design strategies for IoT applications.',
     link: 'https://dev.to/yourprofile/css-grid-vs-flexbox',
     platform: 'Dev.to',
-    image: WestminsterLogo,
+    image: iotImage,
   },
 ];
 
@@ -96,7 +105,7 @@ const Blog: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.1, // Staggered animation
+        delay: index * 0.2, // Staggered animation
       },
     }),
   };
@@ -113,7 +122,20 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-900">
+    <section id="services" className="bg-gray-900">
+      {/* <div className="w-full overflow-hidden">
+        <svg
+          className="w-full h-36"
+          viewBox="0 0 1200 120"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0 C150,100 350,100 500,50 C650,0 850,0 1200,50 L1200,00 L0,0 Z"
+            className="fill-current text-gray-700"
+          ></path>
+        </svg>
+      </div> */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-white font-extrabold text-2xl mb-4">Blogs</h1>
         <h2 className="text-5xl font-bold mb-12 text-white">My Articles</h2>
@@ -130,7 +152,7 @@ const Blog: React.FC = () => {
               animate="visible"
               variants={cardVariants}
             >
-              <ArticleCard article={article} index={index} />
+              <ArticleCard article={article} index={index}/>
             </motion.div>
           ))}
         </motion.div>
