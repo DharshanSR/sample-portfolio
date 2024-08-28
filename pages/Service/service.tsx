@@ -91,7 +91,7 @@ const Expertise: React.FC = () => {
       </div>
 
       <div className="container mx-auto text-center py-20">
-        <h1 className="text-white font-extrabold text-1xl mb-4">Expertise</h1>
+        <h1 className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-extrabold text-2xl mb-4">Expertise</h1>
         <h2 className="text-5xl font-semibold mb-8 text-white">Areas of Expertise</h2>
         <motion.div
           ref={sectionRef}
@@ -108,7 +108,7 @@ const Expertise: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="w-full md:w-1/2 lg:w-1/3 p-4"
             >
-              <div className="relative bg-gray-800 hover:bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg shadow-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer group">
+              <div className="relative bg-gray-800 hover:bg-gradient-to-t from-gray-800 to-green-300 rounded-lg shadow-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer group">
                 {isClient && service.animationData && (
                   <div className="inset-0 flex items-center justify-center overflow-hidden cursor-pointer">
                     <Lottie

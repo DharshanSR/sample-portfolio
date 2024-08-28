@@ -25,7 +25,7 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
   return (
     <motion.div
       ref={ref}
-      className="cursor-pointer bg-gray-800 p-6 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+      className="cursor-pointer bg-gray-800 hover:bg-gradient-to-r from-gray-800 to-blue-400 p-6 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
       variants={sectionVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
@@ -40,10 +40,10 @@ const ArticleCard: React.FC<{ article: Article; index: number }> = ({ article, i
           className="transition-transform duration-300 ease-in-out transform hover:scale-110"
         />
       </div>
-      <h2 className="text-2xl font-bold mb-2 text-white">{article.title}</h2>
-      <p className="text-white mb-4">{article.description}</p>
+      <h2 className="text-xl font-bold mb-2 text-white">{article.title}</h2>
+      <p className="text-white mb-4 text-sm">{article.description}</p>
       <a href={article.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-        <Button className="transition-colors duration-300 ease-in-out hover:bg-blue-600 text-green-300">
+        <Button className="transition-colors duration-300 ease-in-out hover:bg-blue-900 text-green-300">
           Read more on {article.platform}
         </Button>
       </a>
