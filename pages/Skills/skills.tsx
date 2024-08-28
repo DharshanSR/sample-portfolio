@@ -30,7 +30,7 @@ const Skills = () => {
   return (
     <section id="skills" className="bg-gray-900 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold text-2xl sm:text-3xl mb-4 text-center">Skills</h2>
+        <h2 className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold text-2xl sm:text-3xl mb-4 mt-10 text-center">Skills</h2>
         <motion.h1
           className="text-5xl font-extrabold text-white mb-12 mt-6"
           variants={titleVariants}
