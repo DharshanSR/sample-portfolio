@@ -123,7 +123,7 @@ const Blog: React.FC = () => {
 
   return (
     <section id="services" className="bg-gray-900">
-      {/* <div className="w-full overflow-hidden">
+      <div className="w-full overflow-hidden">
         <svg
           className="w-full h-36"
           viewBox="0 0 1200 120"
@@ -135,9 +135,9 @@ const Blog: React.FC = () => {
             className="fill-current text-gray-700"
           ></path>
         </svg>
-      </div> */}
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-white font-extrabold text-2xl mb-4">Blogs</h1>
+        <h1 className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-extrabold text-2xl mb-4">Blogs</h1>
         <h2 className="text-5xl font-bold mb-12 text-white">My Articles</h2>
         <motion.div
           initial="hidden"
