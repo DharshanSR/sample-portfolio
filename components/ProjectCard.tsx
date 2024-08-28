@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import useProjectInView from '@/hooks/useProjectInView';
 import { Project } from '@/data/projectData'; // Import Project type
+import githubIcon from '@/images/GitHub_Invertocat_Logo.png';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -103,8 +104,15 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
           href={project.githubLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+          className="inline-flex items-center bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
         >
+          <Image
+            src={githubIcon}
+            alt="GitHub"
+            width={24} // Adjust width as needed
+            height={24} // Adjust height as needed
+            className="mr-2" // Optional: Adds spacing between the image and text
+          />
           GitHub
         </a>
       </div>
