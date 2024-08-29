@@ -2,16 +2,21 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay'; // Import Swiper autoplay CSS
+import { Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
 import { projects } from '@/data/projectData';
 import PageTransition from '@/components/PageTransition';
 import useProjectInView from '@/hooks/useProjectInView';
 import ProjectCard from '@/components/ProjectCard';
 
 const scaleVariants = {
-  hidden: { opacity: 0, scale: 0.9 }, // Start scaled down
+  hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1 },
-  entry: { opacity: 1, scale: 1 }, // Entry state is similar to visible
-  exit: { opacity: 0, scale: 0.9 }, // Scale down on exit
+  entry: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.9 },
 };
 
 const Portfolio = () => {
@@ -19,6 +24,9 @@ const Portfolio = () => {
   const [showAll, setShowAll] = useState(false);
   const [filter, setFilter] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(1); // State for current slide
+  const [totalSlides, setTotalSlides] = useState(0); // State for total slides
 
   useEffect(() => {
     const newFilteredProjects = projects.filter(project =>
@@ -27,6 +35,13 @@ const Portfolio = () => {
     setFilteredProjects(newFilteredProjects);
     setVisibleProjects(8);
   }, [filter]);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleLoadMore = () => {
     setShowAll(true);
@@ -82,23 +97,67 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Animate the presence of ProjectCards */}
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <AnimatePresence>
+          {/* Swiper Project Display */}
+          {isMobile ? (
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              pagination={{
+                clickable: true,
+                renderBullet: (index, className) => (
+                  `<span class="${className}"></span>`
+                ),
+              }}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              onSlideChange={(swiper) => {
+                setCurrentSlide(swiper.activeIndex + 1);
+                setTotalSlides(swiper.slides.length);
+              }}
+              className="mySwiper"
+              style={{ paddingBottom: '80px' }}
+            >
               {filteredProjects.slice(0, visibleProjects).map((project, index) => (
-                <motion.div
-                  key={index} // Use index as key since no unique identifier is available
-                  variants={scaleVariants}
-                  initial="hidden"
-                  animate="entry" // Use entry for initial animation
-                  exit="exit"
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <ProjectCard project={project} index={index} />
-                </motion.div>
+                <SwiperSlide key={index}>
+                  <motion.div
+                    variants={scaleVariants}
+                    initial="hidden"
+                    animate="entry"
+                    exit="exit"
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <ProjectCard project={project} index={index} />
+                  </motion.div>
+                </SwiperSlide>
               ))}
-            </AnimatePresence>
-          </div>
+            </Swiper>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <AnimatePresence>
+                {filteredProjects.slice(0, visibleProjects).map((project, index) => (
+                  <motion.div
+                    key={index}
+                    variants={scaleVariants}
+                    initial="hidden"
+                    animate="entry"
+                    exit="exit"
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <ProjectCard project={project} index={index} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          )}
+
+{isMobile && totalSlides > 0 && (
+  <div className="absolute bottom-4 right-4 flex items-center bg-gray-800 text-white p-2 rounded-full shadow-lg">
+    <span className="font-semibold text-lg">{currentSlide}</span>
+    <span className="mx-2">/</span>
+    <span className="font-semibold text-lg">{totalSlides}</span>
+  </div>
+)}
+
 
           <div className="text-center mt-8">
             {showAll ? (
