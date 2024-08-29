@@ -21,7 +21,7 @@ const AnimatedParagraph: React.FC<{ text: string; delay: number }> = ({ text, de
       initial={{ opacity: 0, y: 20 }}
       animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="text-lg leading-relaxed mb-4 text-justify"
+      className="text-lg leading-relaxed mb-6 text-justify"
     >
       {text}
     </motion.div>
@@ -35,8 +35,8 @@ const About: React.FC = () => {
   const { ref: imageRef, inView: imageInView } = useProjectInView();
 
   return (
-    <section className="py-12 bg-gray-900 text-gray-100">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gray-900 text-white">
+      <div className="container mx-auto px-4 md:px-8">
 
         {/* About Me Heading */}
         <motion.div
@@ -44,42 +44,43 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl font-semibold text-white">About Me</h2>
+          <h2 className="text-5xl md:text-5xl font-semibold text-white">About Me</h2>
+          <p className="text-lg mt-2 text-gray-400">A glimpse into my journey and achievements</p>
         </motion.div>
 
         {/* About Me Content */}
-        <div className="flex flex-col items-center md:flex-row mb-12">
+        <div className="flex flex-col items-center md:flex-row mb-16">
           {/* Profile Image with Entry Animation */}
           <motion.div
             ref={imageRef}
             initial={{ opacity: 0, x: 50 }}
             animate={imageInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="w-full md:w-1/3 flex justify-center mt-8 md:mt-0"
+            className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 md:mr-8" // Added right margin on medium screens and larger
           >
             <Image
               src={westminsterLogo} // Replace with your actual profile image
               alt="University of Westminster Logo"
-              width={400}
-              height={420}
+              width={450}
+              height={450}
               className="rounded-full shadow-lg"
             />
           </motion.div>
 
-          <div className="md:w-2/3 mt-8 md:mt-0">
+          <div className="md:w-2/3">
             {/* Paragraphs with Animation */}
             <AnimatedParagraph
-              text="Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK. With a strong foundation in web development, mobile app development, and machine learning, I am passionate about solving complex problems and crafting innovative solutions that drive progress."
+              text="Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK. I specialize in full-stack development with a strong foundation in frontend technologies like React, Next.js, and Tailwind CSS, as well as backend development using Node.js and Express. My passion lies in creating robust and scalable applications that deliver exceptional user experiences."
               delay={0.2}
             />
             <AnimatedParagraph
-              text="My expertise spans across modern technologies such as Next.js, TypeScript, and Tailwind CSS. I am committed to continuous learning and stay engaged with the latest industry trends. Outside of coding, I enjoy writing insightful blogs, exploring new technologies, and collaborating on impactful projects."
+              text="My journey in software engineering has been marked by hands-on projects and continuous learning. I have successfully built several applications, including an Uber clone and a real-time document editor, which have honed my skills in problem-solving and innovative thinking. I am particularly interested in cybersecurity and strive to integrate best practices in my projects to ensure secure and efficient solutions."
               delay={0.4}
             />
             <AnimatedParagraph
-              text="I am eager to contribute to dynamic teams and take on new challenges. My goal is to apply my skills and knowledge to deliver exceptional results and make a meaningful impact in the tech industry."
+              text="As I advance in my career, I aim to contribute to dynamic teams and tackle complex challenges in the tech industry. My goal is to leverage my expertise in modern technologies and cybersecurity to drive impactful solutions and foster growth within the technology sector."
               delay={0.6}
             />
           </div>
@@ -91,26 +92,26 @@ const About: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={statsInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center md:justify-around mb-12"
+          className="flex flex-wrap justify-center gap-8 mb-24"
         >
-          <div className="text-center mb-8 md:mb-0 flex flex-col items-center px-4 md:px-0">
-            <FaBriefcase className="text-6xl text-cyan-400 mb-2" />
-            <p className="text-4xl font-bold text-cyan-400">
-              <CountUp start={0} end={5} duration={2} /> <span className="text-4xl">+</span>
+          <div className="text-center flex flex-col items-center px-4 md:px-6">
+            <FaBriefcase className="text-5xl md:text-6xl text-cyan-400 mb-2" />
+            <p className="text-3xl md:text-4xl font-bold text-cyan-400">
+              <CountUp start={0} end={5} duration={2} /> <span className="text-3xl md:text-4xl">+</span>
             </p>
             <p className="text-lg font-medium">Years of Experience</p>
           </div>
-          <div className="text-center mb-8 md:mb-0 flex flex-col items-center px-4 md:px-0">
-            <FaLaptopCode className="text-6xl text-cyan-400 mb-2" />
-            <p className="text-4xl font-bold text-cyan-400">
-              <CountUp start={0} end={10} duration={2} /> <span className="text-4xl">+</span>
+          <div className="text-center flex flex-col items-center px-4 md:px-6">
+            <FaLaptopCode className="text-5xl md:text-6xl text-cyan-400 mb-2" />
+            <p className="text-3xl md:text-4xl font-bold text-cyan-400">
+              <CountUp start={0} end={10} duration={2} /> <span className="text-3xl md:text-4xl">+</span>
             </p>
             <p className="text-lg font-medium">Projects Completed</p>
           </div>
-          <div className="text-center flex flex-col items-center px-4 md:px-0">
-            <FaTrophy className="text-6xl text-cyan-400 mb-2" />
-            <p className="text-4xl font-bold text-cyan-400">
-              <CountUp start={0} end={2} duration={2} /> <span className="text-4xl">+</span>
+          <div className="text-center flex flex-col items-center px-4 md:px-6">
+            <FaTrophy className="text-5xl md:text-6xl text-cyan-400 mb-2" />
+            <p className="text-3xl md:text-4xl font-bold text-cyan-400">
+              <CountUp start={0} end={2} duration={2} /> <span className="text-3xl md:text-4xl">+</span>
             </p>
             <p className="text-lg font-medium">Awards</p>
           </div>
@@ -122,81 +123,59 @@ const About: React.FC = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={educationInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <h2 className="text-3xl font-semibold text-white mb-6 mt-8 text-center">Education</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <Image
-                src={westminsterLogo}
-                alt="University of Westminster Logo"
-                width={140}
-                height={140}
-                className="border-gray-700 mb-4"
-              />
-              <div className="text-center">
-                <strong className="text-xl text-white">
-                  Bachelor of Engineering in Software Engineering
-                </strong>
-                <br />
-                University of Westminster, London, United Kingdom
-                <br />
-                <div className="text-green-500">2023 - Present<br /></div>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 mt-8 text-center">Education</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            {/* Education Item 1 */}
+            <div className="flex items-start space-x-6">
+              <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
+                <Image src={westminsterLogo} alt="University of Westminster Logo" width={72} height={72} className="rounded-full" />
+              </div>
+              <div className="flex-1">
+                <strong className="text-xl text-white">Bachelor of Engineering in Software Engineering</strong>
+                <p className="text-gray-400">University of Westminster, London, United Kingdom</p>
+                <div className="text-green-500">2023 - Present</div>
               </div>
             </div>
 
-            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <Image
-                src={moratuwaLogo}
-                alt="University of Moratuwa Logo"
-                width={140}
-                height={140}
-                className="border-gray-700 mb-4"
-              />
-              <div className="text-center">
+            <div className="flex items-start space-x-6">
+              <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
+                <Image src={moratuwaLogo} alt="University of Moratuwa Logo" width={72} height={72} className="rounded-full" />
+              </div>
+              <div className="flex-1">
                 <strong className="text-xl text-white">Full Stack Developer Trainee</strong>
-                <br />
-                University of Moratuwa, Colombo, Sri Lanka
-                <br />
-                <div className="text-green-500">2023 - Present<br /></div>
+                <p className="text-gray-400">University of Moratuwa, Colombo, Sri Lanka</p>
+                <div className="text-green-500">2023 - Present</div>
               </div>
             </div>
 
-            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <Image
-                src={pearsonLogo}
-                alt="Pearson Institute Logo"
-                width={160}
-                height={160}
-                className="border-gray-700 mb-4"
-              />
-              <div className="text-center mt-8">
+            <div className="flex items-start space-x-6">
+              <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
+                <Image src={pearsonLogo} alt="Pearson Logo" width={72} height={72} className="rounded-full" />
+              </div>
+              <div className="flex-1">
                 <strong className="text-xl text-white">Diploma in English</strong>
-                <br />
-                ESoft Metro Campus, Colombo, Sri Lanka
-                <br />
-                <div className="text-green-500">2022 - 2023<br /></div>
+                <p className="text-gray-400"> ESoft Metro Campus, Colombo, Sri Lanka</p>
+                <div className="text-green-500">2022 - 2023</div>
               </div>
             </div>
 
-            <div className="flex flex-col items-center bg-gray-800 p-8 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <Image
-                src={hinduLogo}
-                alt="Hindu College Logo"
-                width={120}
-                height={120}
-                className="border-gray-700 mb-4"
-              />
-              <div className="text-center">
-                <strong className="text-xl text-white">High School Diploma</strong>
-                <br />
-                Hindu College, Colombo, Sri Lanka
-                <br />
-                <div className="text-green-500">2010 - 2021<br /></div>
+            <div className="flex items-start space-x-6">
+              <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
+                <Image src={hinduLogo} alt="University of Westminster Logo" width={72} height={72} className="rounded-full" />
+              </div>
+              <div className="flex-1">
+                <strong className="text-xl text-white">Advanced Level & Ordinary Level</strong>
+                <p className="text-gray-400">  Hindu College, Colombo, Sri Lanka</p>
+                <div className="text-green-500">2010 - 2021</div>
               </div>
             </div>
           </div>
         </motion.div>
+
+
       </div>
     </section>
   );
