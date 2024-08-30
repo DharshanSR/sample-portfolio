@@ -11,7 +11,6 @@ import hinduLogo from '@/images/hindu_college.jpeg';
 import pearsonLogo from '@/images/pearson-logo.png';
 import useProjectInView from '@/hooks/useProjectInView';
 
-// Reusable Paragraph Component with Animation
 const AnimatedParagraph: React.FC<{ text: string; delay: number }> = ({ text, delay }) => {
   const { ref: paragraphRef, inView: paragraphInView } = useProjectInView();
 
@@ -34,6 +33,8 @@ const About: React.FC = () => {
   const { ref: educationRef, inView: educationInView } = useProjectInView();
   const { ref: imageRef, inView: imageInView } = useProjectInView();
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4 md:px-8">
@@ -41,7 +42,7 @@ const About: React.FC = () => {
         {/* About Me Heading */}
         <motion.div
           ref={aboutRef}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: isMobile ? 0 : 50 }}
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
@@ -51,26 +52,26 @@ const About: React.FC = () => {
         </motion.div>
 
         {/* About Me Content */}
-        <div className="flex flex-col items-center md:flex-row mb-16">
+        <div className="flex flex-col md:flex-row mb-16">
           {/* Profile Image with Entry Animation */}
           <motion.div
             ref={imageRef}
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : 50 }}
             animate={imageInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 md:mr-8" // Added right margin on medium screens and larger
+            className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 md:mr-8"
           >
             <Image
-              src={westminsterLogo} // Replace with your actual profile image
+              src={westminsterLogo}
               alt="University of Westminster Logo"
-              width={450}
-              height={450}
+              width={isMobile ? 200 : 450}  // Adjust size for mobile view
+              height={isMobile ? 200 : 450}
               className="rounded-full shadow-lg"
+              priority
             />
           </motion.div>
 
           <div className="md:w-2/3">
-            {/* Paragraphs with Animation */}
             <AnimatedParagraph
               text="Hello, I&apos;m Ravindran Dharshan, a dedicated software engineering student based in London, UK. I specialize in full-stack development with a strong foundation in frontend technologies like React, Next.js, and Tailwind CSS, as well as backend development using Node.js and Express. My passion lies in creating robust and scalable applications that deliver exceptional user experiences."
               delay={0.2}
@@ -89,7 +90,7 @@ const About: React.FC = () => {
         {/* Stats Section */}
         <motion.div
           ref={statsRef}
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: isMobile ? 1 : 0.8 }}
           animate={statsInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6 }}
           className="flex flex-wrap justify-center gap-8 mb-24"
@@ -120,7 +121,7 @@ const About: React.FC = () => {
         {/* Education Section */}
         <motion.div
           ref={educationRef}
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: isMobile ? 0 : -50 }}
           animate={educationInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-16"
@@ -129,7 +130,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
             {/* Education Item 1 */}
-            <div className="flex items-start space-x-6">
+            <div className="flex items-center space-x-6">
               <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
                 <Image src={westminsterLogo} alt="University of Westminster Logo" width={72} height={72} className="rounded-full" />
               </div>
@@ -140,42 +141,30 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-6">
-              <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
-                <Image src={moratuwaLogo} alt="University of Moratuwa Logo" width={72} height={72} className="rounded-full" />
-              </div>
-              <div className="flex-1">
-                <strong className="text-xl text-white">Full Stack Developer Trainee</strong>
-                <p className="text-gray-400">University of Moratuwa, Colombo, Sri Lanka</p>
-                <div className="text-green-500">2023 - Present</div>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-6">
+            <div className="flex items-center space-x-6">
               <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
                 <Image src={pearsonLogo} alt="Pearson Logo" width={72} height={72} className="rounded-full" />
               </div>
               <div className="flex-1">
                 <strong className="text-xl text-white">Diploma in English</strong>
                 <p className="text-gray-400"> ESoft Metro Campus, Colombo, Sri Lanka</p>
-                <div className="text-green-500">2022 - 2023</div>
+                <div className="text-green-500">2021 - 2022</div>
               </div>
             </div>
 
-            <div className="flex items-start space-x-6">
+            <div className="flex items-center space-x-6">
               <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
-                <Image src={hinduLogo} alt="University of Westminster Logo" width={72} height={72} className="rounded-full" />
+                <Image src={hinduLogo} alt="Jaffna Hindu College Logo" width={72} height={72} className="rounded-full" />
               </div>
               <div className="flex-1">
-                <strong className="text-xl text-white">Advanced Level & Ordinary Level</strong>
-                <p className="text-gray-400">  Hindu College, Colombo, Sri Lanka</p>
-                <div className="text-green-500">2010 - 2021</div>
+                <strong className="text-xl text-white">G.C.E A/L</strong>
+                <p className="text-gray-400">Jaffna Hindu College, Jaffna, Sri Lanka</p>
+                <div className="text-green-500">2017 - 2020</div>
               </div>
             </div>
+
           </div>
         </motion.div>
-
-
       </div>
     </section>
   );
