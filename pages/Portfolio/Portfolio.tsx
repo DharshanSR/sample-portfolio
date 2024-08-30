@@ -150,13 +150,13 @@ const Portfolio = () => {
             </div>
           )}
 
-{isMobile && totalSlides > 0 && (
-  <div className="absolute bottom-4 right-4 flex items-center bg-gray-800 text-white p-2 rounded-full shadow-lg">
-    <span className="font-semibold text-lg">{currentSlide}</span>
-    <span className="mx-2">/</span>
-    <span className="font-semibold text-lg">{totalSlides}</span>
-  </div>
-)}
+          {isMobile && totalSlides > 0 && (
+            <div className="absolute bottom-4 right-4 flex items-center bg-gray-800 text-white p-2 rounded-full shadow-lg">
+              <span className="font-semibold text-lg">{currentSlide}</span>
+              <span className="mx-2">/</span>
+              <span className="font-semibold text-lg">{totalSlides}</span>
+            </div>
+          )}
 
 
           <div className="text-center mt-8">
