@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import CountUp from 'react-countup';
 import { motion } from 'framer-motion';
@@ -33,12 +33,26 @@ const About: React.FC = () => {
   const { ref: educationRef, inView: educationInView } = useProjectInView();
   const { ref: imageRef, inView: imageInView } = useProjectInView();
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up listener on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4 md:px-8">
-
         {/* About Me Heading */}
         <motion.div
           ref={aboutRef}
@@ -141,17 +155,19 @@ const About: React.FC = () => {
               </div>
             </div>
 
+            {/* Education Item 2 */}
             <div className="flex items-center space-x-6">
               <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
                 <Image src={pearsonLogo} alt="Pearson Logo" width={72} height={72} className="rounded-full" />
               </div>
               <div className="flex-1">
                 <strong className="text-xl text-white">Diploma in English</strong>
-                <p className="text-gray-400"> ESoft Metro Campus, Colombo, Sri Lanka</p>
+                <p className="text-gray-400">ESoft Metro Campus, Colombo, Sri Lanka</p>
                 <div className="text-green-500">2021 - 2022</div>
               </div>
             </div>
 
+            {/* Education Item 3 */}
             <div className="flex items-center space-x-6">
               <div className="bg-gray-800 p-6 rounded-full border-2 border-gray-700">
                 <Image src={hinduLogo} alt="Jaffna Hindu College Logo" width={72} height={72} className="rounded-full" />
