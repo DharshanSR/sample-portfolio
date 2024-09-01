@@ -122,7 +122,7 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <section id="services" className="bg-gray-900">
+    <section id="blogs" className="bg-gray-900">
       <div className="w-full overflow-hidden">
         <svg
           className="w-full h-36"

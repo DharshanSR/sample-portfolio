@@ -51,7 +51,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-900 text-white">
+    <section id="about" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4 md:px-8">
         {/* About Me Heading */}
         <motion.div
@@ -78,8 +78,8 @@ const About: React.FC = () => {
             <Image
               src={westminsterLogo}
               alt="University of Westminster Logo"
-              width={isMobile ? 200 : 450}  // Adjust size for mobile view
-              height={isMobile ? 200 : 450}
+              width={isMobile ? 200 : 300}  // Adjust size for mobile view
+              height={isMobile ? 200 : 300}
               className="rounded-full shadow-lg"
               priority
             />
@@ -187,3 +187,5 @@ const About: React.FC = () => {
 };
 
 export default About;
+
+
