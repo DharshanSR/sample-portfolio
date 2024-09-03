@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay'; // Import Swiper autoplay CSS
 import { Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
 import { projects } from '@/data/projectData';
-import PageTransition from '@/components/PageTransition';
+// import PageTransition from '@/components/PageTransition';
 import useProjectInView from '@/hooks/useProjectInView';
 import ProjectCard from '@/components/ProjectCard';
 
@@ -61,11 +61,10 @@ const Portfolio = () => {
   const { ref: sectionRef, inView: sectionInView } = useProjectInView();
 
   return (
-    <PageTransition>
-      <section id="portfolio" className="py-40 bg-gray-900">
+      <section id="portfolio" className="py-20 relative bg-customBlue">
         <div className="container mx-auto px-4 py-8">
           <motion.h1
-            className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold text-2xl sm:text-3xl mb-4 text-center"
+            className="text-white mt-8 font-bold text-2xl sm:text-3xl mb-4 text-center"
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
             variants={sectionVariants}
@@ -75,7 +74,7 @@ const Portfolio = () => {
             Portfolio
           </motion.h1>
           <motion.h2
-            className="text-5xl sm:text-5xl font-bold mb-12 text-center text-white"
+            className="text-5xl sm:text-5xl font-bold mb-12 text-center text-customDarkBlue"
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
             variants={sectionVariants}
@@ -174,7 +173,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-    </PageTransition>
   );
 };
 
