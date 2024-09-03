@@ -16,6 +16,7 @@ import WestminsterLogo from '@/images/westminster_logo.png';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
 import { motion } from 'framer-motion';
+import blogManImage from '@/images/blogMan.png';
 
 interface Article {
   title: string;
@@ -122,23 +123,19 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <section id="blogs" className="bg-gray-900">
-      <div className="w-full overflow-hidden">
-        <svg
-          className="w-full h-36"
-          viewBox="0 0 1200 120"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 C150,100 350,100 500,50 C650,0 850,0 1200,50 L1200,00 L0,0 Z"
-            className="fill-current text-gray-700"
-          ></path>
-        </svg>
-      </div>
+    <section id="blogs" className="relative bg-customBlue py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-extrabold text-2xl mb-4">Blogs</h1>
-        <h2 className="text-5xl font-bold mb-12 text-white">My Articles</h2>
+        <div className="flex flex-col mb-12">
+        <Image
+            src={blogManImage}
+            alt="Expertise Icon"
+            width={250}
+            height={250}
+            className="mb-2 -mt-32"
+          />
+          <h1 className="font-extrabold text-2xl text-white mb-4 -mt-40">Blogs</h1>
+          <h2 className="text-5xl font-extrabold text-customDarkBlue">My Articles</h2>
+        </div>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -152,7 +149,7 @@ const Blog: React.FC = () => {
               animate="visible"
               variants={cardVariants}
             >
-              <ArticleCard article={article} index={index}/>
+              <ArticleCard article={article} index={index} />
             </motion.div>
           ))}
         </motion.div>
