@@ -16,7 +16,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1600px",
       },
     },
     extend: {
@@ -59,46 +59,15 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        customBlue: '#8ca5cc', //background color
+        customDarkBlue: '#27293B',
+        customGrayBlue: '#1A1D24',
+        //#97a6d0
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        thread2: {
-          '0%': { width: '100%' },
-          '50%': { width: '100%' },
-          '80%': { width: '0%' },
-          '100%': { width: '100%' },
-        },
-        shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fadeIn": 'fadeIn 2s ease-in-out',
-        "thread2": 'thread2 10s infinite',
-        "shimmer": "shimmer 2s linear infinite",
       },
     },
   },
