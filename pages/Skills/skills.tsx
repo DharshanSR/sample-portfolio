@@ -28,11 +28,19 @@ const titleVariants = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="bg-gray-900 py-20">
+    <section id="skills" className="bg-customBlue py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold text-2xl sm:text-3xl mb-4 mt-10 text-center">Skills</h2>
+        <motion.h2
+          className="text-white font-bold text-2xl sm:text-3xl mb-4 mt-10"
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }} // Triggers animation when in view
+        >
+          Skills
+        </motion.h2>
         <motion.h1
-          className="text-5xl font-extrabold text-white mb-12 mt-6"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-customGrayBlue mb-8 mt-6"
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
@@ -43,7 +51,7 @@ const Skills = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
         >
           {Object.entries(skillsData).map(([category, skills], categoryIndex) => (
             <motion.div
@@ -54,10 +62,10 @@ const Skills = () => {
               whileInView="visible"
               viewport={{ once: true }} // Triggers animation when in view
               whileHover="hover"
-              className="bg-gray-800 p-8 rounded-lg shadow-lg transform transition-all duration-300"
+              className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg transform transition-all duration-300 cursor-pointer"
             >
-              <h2 className="text-2xl text-yellow-400 font-semibold mb-6">{category}</h2>
-              <div className="flex flex-wrap justify-center items-center gap-6">
+              <h2 className="text-xl sm:text-2xl text-yellow-400 font-semibold mb-4">{category}</h2>
+              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
                 {skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -67,13 +75,13 @@ const Skills = () => {
                     whileInView="visible"
                     viewport={{ once: true }} // Triggers animation when in view
                     whileHover="hover"
-                    className="flex flex-col items-center"
+                    className="flex flex-col items-center cursor-pointer"
                   >
                     <Image
                       src={skill.image}
                       alt={skill.name}
-                      width={60}
-                      height={60}
+                      width={50}
+                      height={50}
                       className="mb-2"
                     />
                     <span className="text-white text-sm font-medium">{skill.name}</span>

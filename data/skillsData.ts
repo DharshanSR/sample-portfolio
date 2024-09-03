@@ -17,6 +17,7 @@ import expressIcon from '@/assests/backend/express-original.svg';
 import javaIcon from '@/assests/backend/java-original.svg';
 import npmIcon from '@/assests/backend/npm-original-wordmark.svg';
 import jsonIcon from '@/assests/backend/json-original.svg';
+import pythonIcon from '@/assests/backend/python-svgrepo-com.svg';
 
 //hosting
 import vercelIcon from '@/assests/hosting/vercel-original.svg';
@@ -31,6 +32,20 @@ import intellijIcon from '@/assests/ides/intellij-original.svg';
 import pycharmIcon from '@/assests/ides/pycharm-original.svg';
 import rstudioIcon from '@/assests/ides/rstudio-original.svg';
 import webstormIcon from '@/assests/ides/webstorm-original.svg';
+
+//database
+import mongodbIcon from '@/assests/database/mongodb-original.svg';
+import mysqlIcon from '@/assests/database/mysql-original.svg';
+import postgresIcon from '@/assests/database/postgresql-original.svg';
+import firebaseIcon from '@/assests/database/firebase-original.svg';
+import appwriteIcon from '@/assests/database/appwrite-original.svg';
+
+//tools and technologies
+import dockerIcon from '@/assests/tools&technologies/docker-original.svg';
+import gitIcon from '@/assests/tools&technologies/git-original.svg';
+import githubIcon from '@/assests/tools&technologies/github-original.svg';
+import sentryIcon from '@/assests/tools&technologies/sentry-original.svg';
+import canvaIcon from '@/assests/tools&technologies/canva.png';
 export interface Skill {
   name: string;
   image: StaticImageData | string; // Use StaticImageData for imported images or string for URLs
@@ -82,6 +97,10 @@ export const skillsData: Record<string, Skill[]> = {
       image: javaIcon, // Replace with actual path or URL
     },
     {
+      name: 'Python',
+      image: pythonIcon, // Replace with actual path or URL
+    },
+    {
       name: 'Node.js',
       image: nodejsIcon, // Replace with actual path or URL
     },
@@ -126,10 +145,11 @@ export const skillsData: Record<string, Skill[]> = {
       name: 'IntelliJ IDEA',
       image: intellijIcon, // Replace with actual path or URL
     },
+    // {
+    //   name: 'PyCharm',
+    //   image: pycharmIcon, // Replace with actual path or URL
+    // },
     {
-      name: 'PyCharm',
-      image: pycharmIcon, // Replace with actual path or URL
-    },{
       name: 'WebStorm',
       image: webstormIcon, // Replace with actual path or URL
     },{
@@ -142,75 +162,45 @@ export const skillsData: Record<string, Skill[]> = {
     
   ],Database: [
     {
-      name: 'Visual Studio Code',
-      image: '/path/to/vscode-logo.png', // Replace with actual path or URL
+      name: 'Mongo DB',
+      image: mongodbIcon, // Replace with actual path or URL
     },
     {
-      name: 'IntelliJ IDEA',
-      image: '/path/to/intellij-logo.png', // Replace with actual path or URL
+      name: 'My SQL',
+      image: mysqlIcon, // Replace with actual path or URL
     },
     {
-      name: 'PyCharm',
-      image: '/path/to/pycharm-logo.png', // Replace with actual path or URL
+      name: 'PostgreSql',
+      image: postgresIcon, // Replace with actual path or URL
     },{
-      name: 'WebStorm',
-      image: '/path/to/pycharm-logo.png', // Replace with actual path or URL
+      name: 'Firebase',
+      image: firebaseIcon, // Replace with actual path or URL
     },{
-      name: 'RStudio',
-      image: '/path/to/pycharm-logo.png', // Replace with actual path or URL
-    },{
-      name: 'Android Studio',
-      image: '/path/to/pycharm-logo.png', // Replace with actual path or URL
+      name: 'Appwrite',
+      image: appwriteIcon, // Replace with actual path or URL
     },
-    
   ],
   Tools: [
     {
       name: 'Git',
-      image: '/path/to/git-logo.png', // Replace with actual path or URL
+      image: gitIcon, // Replace with actual path or URL
     },
     {
       name: 'Docker',
-      image: '/path/to/docker-logo.png', // Replace with actual path or URL
+      image: dockerIcon, // Replace with actual path or URL
     },
     {
-      name: 'Kubernetes',
-      image: '/path/to/kubernetes-logo.png', // Replace with actual path or URL
+      name: 'GitHub',
+      image: githubIcon, // Replace with actual path or URL
     },
     {
-      name: 'Webpack',
-      image: '/path/to/webpack-logo.png', // Replace with actual path or URL
+      name: 'Sentry',
+      image: sentryIcon, // Replace with actual path or URL
     },
     {
-      name: 'Jenkins',
-      image: '/path/to/jenkins-logo.png', // Replace with actual path or URL
-    },
-    {
-      name: 'ESLint',
-      image: '/path/to/eslint-logo.png', // Replace with actual path or URL
-    },
-    {
-      name: 'Prettier',
-      image: '/path/to/prettier-logo.png', // Replace with actual path or URL
-    },
-    {
-      name: 'Figma',
-      image: '/path/to/figma-logo.png', // Replace with actual path or URL
+      name: 'Canva',
+      image: canvaIcon, // Replace with actual path or URL
     },
     //we should add more
-  ],
-  "Machine Learning": [
-    {
-      name: 'Git',
-      image: '/path/to/git-logo.png', // Replace with actual path or URL
-    },
-    {
-      name: 'Docker',
-      image: '/path/to/docker-logo.png', // Replace with actual path or URL
-    },
-    {
-      name: 'Kubernetes',
-      image: '/path/to/kubernetes-logo.png', // Replace with actual path or URL
-    },
   ],
 };
