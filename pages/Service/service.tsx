@@ -81,12 +81,12 @@ const Expertise: React.FC = () => {
     >
       <div className="container mx-auto text-center py-20">
         <div className="flex flex-col items-center mb-12">
-          <h1 className="font-extrabold text-2xl text-white mb-4 -mt-12">Expertise</h1>
+          <h1 className="font-extrabold text-2xl text-white mb-4 -mt-24">Expertise</h1>
           <Image
             src={serviceMan}
             alt="Expertise Icon"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             className="mb-8"
           />
           <h2 className="text-5xl font-extrabold text-customDarkBlue">Areas of Expertise</h2>

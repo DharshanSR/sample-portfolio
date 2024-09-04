@@ -7,20 +7,22 @@ import ContactMe from "@/pages/Contact Me/ContactMe";
 import Portfolio from "@/pages/Portfolio/Portfolio";
 import Blog from "@/pages/Blogs/Blog";
 import Entrance from "@/pages/Home/Home";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
     <div>
-      {/* <Navbar />  */}
-      <main>
-        <Entrance />
+      <Navbar /> 
+      {/* <main> */}
+        {/* <Entrance /> */}
         <About />
         <Expertise />
-        < Blog />
-        {/* <Skills /> */}
+        <Blog />
+        <Skills />
         <Portfolio />
         {/* <ContactMe /> */}
-      </main>
+      {/* </main> */}
+      <Footer />
     </div>
   );
 }

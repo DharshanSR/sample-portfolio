@@ -153,7 +153,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={experienceInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            //className="flex-shrink-0 w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 relative"
+            className="flex-shrink-0 w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 relative"
             >
               <Image
                 src={expericeImage}
@@ -175,23 +175,23 @@ const About: React.FC = () => {
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 mt-8 text-center">Education</h2>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {/* 3D Graduate Image */}
-            <motion.div
+          {/* 3D Graduate Image */}
+          <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={educationInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
-              className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center"
+              className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center -mt-8 mb-4"
             >
               <Image
                 src={graduate3DImage}
                 alt="3D Graduate Image"
                 width={700} // Adjusted width for responsiveness
                 height={700} // Adjusted height to match width
-                className="rounded-lg object-cover"
+                className=" object-cover"
               />
             </motion.div>
 
+          <div className="flex flex-wrap justify-center items-center gap-8">
             {/* Education Items */}
             <div className="flex flex-wrap justify-center gap-4 text-center">
               {/* Education Item 1 */}
