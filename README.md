@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# My Portfolio
 
-First, run the development server:
+This is my personal portfolio showcasing my projects, skills, and experiences. Built using modern web technologies, it focuses on delivering a visually appealing, performant, and responsive user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio is built using the following technologies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **[Next.js](https://nextjs.org/)**: Framework for server-side rendering and static site generation.
+- **[TypeScript](https://www.typescriptlang.org/)**: Type-safe programming language for scalable application development.
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**: Core scripting language for dynamic web experiences.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for responsive design.
+- **[React Animation Hooks](https://reactjs.org/docs/hooks-intro.html)**: Advanced animations and transitions for React components.
+- **[Framer Motion](https://www.framer.com/motion/)**: A powerful library for creating smooth animations and interactions.
+- **[Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started)**: A React renderer for three.js to build 3D experiences.
+- **[Vercel](https://vercel.com/)**: Platform for deployment and continuous integration.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Dynamic Animations**: Implemented using Framer Motion and React animation hooks for smooth transitions and engaging interactions.
+- **3D Graphics**: Integrated 3D models and scenes using Three Fiber, enabling immersive visual experiences.
+- **Responsive Design**: Fully responsive layout using Tailwind CSS, ensuring seamless functionality across all devices.
+- **Fast Performance**: Built with Next.js and optimized for fast load times, delivering a smooth user experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+Follow the steps below to run the portfolio locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14.x or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
+
+2. Install the dependencies:
+
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using yarn:
+
+   ```bash
+   yarn install
+   ```
+
+3. Start the development server:
+
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Or using yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the portfolio live.
+
+---
+
+## 🌐 Deployment
+
+This portfolio is deployed on **[Vercel](https://vercel.com/)**. For deployment instructions, follow the steps below:
+
+1. Push your code to GitHub.
+2. Connect your GitHub repository to Vercel.
+3. Deploy the project with a single click.
+
+For more information, refer to [Vercel's documentation](https://vercel.com/docs).
+
+---
+
+## 📚 Learn More
+
+To learn more about the technologies used in this project, check out the following links:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Framer Motion Documentation](https://www.framer.com/docs/)
+- [Three Fiber Documentation](https://docs.pmnd.rs/react-three-fiber/getting-started)
+
+---
+
+## 📫 Contact
+
+Feel free to reach out if you have any questions or want to collaborate:
+
+- **Email**: your.email@example.com
+- **LinkedIn**: [your-linkedin-profile](https://www.linkedin.com/in/dharshan-4a2348278/)
+- **GitHub**: [your-github-profile](https://github.com/DharshanSR)
