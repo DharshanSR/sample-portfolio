@@ -5,7 +5,7 @@ import { FaBars, FaTimes, FaHome, FaUser, FaServicestack, FaBlog, FaBrain, FaBri
 import Link from 'next/link';
 import Image from 'next/image';
 import contactPerson from '@/images/Graduate-Men.png';
-import { FaPhoneAlt } from 'react-icons/fa'; 
+import { FaPhoneAlt } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const [nav, setNav] = useState(false);
@@ -84,13 +84,13 @@ const Navbar: React.FC = () => {
 
       {/* Right - Let's Talk Button for Desktop */}
       <div className="hidden md:block">
-  <button
-    className="relative px-4 py-2 bg-white text-teal-600 font-semibold rounded overflow-hidden transition-transform duration-300 transform hover:scale-110"
-  >
-    <FaPhoneAlt className="mr-2 inline-block" /> {/* Icon inside button */}
-    Let&apos;s Talk
-  </button>
-</div>
+        <button
+          className="relative px-4 py-2 bg-white text-teal-600 font-semibold rounded overflow-hidden transition-transform duration-300 transform hover:scale-110"
+        >
+          <FaPhoneAlt className="mr-2 inline-block" /> {/* Icon inside button */}
+          Let&apos;s Talk
+        </button>
+      </div>
 
       {/* Hamburger Icon for Mobile */}
       <div onClick={handleClick} className="md:hidden z-10">
@@ -102,9 +102,8 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-teal-600 p-8 transition-transform duration-500 ease-in-out z-50 ${
-          nav ? 'transform translate-x-0' : 'transform -translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 h-full w-80 bg-teal-600 p-8 transition-transform duration-500 ease-in-out z-50 ${nav ? 'transform translate-x-0' : 'transform -translate-x-full'
+          }`}
       >
         {/* Close Icon in Sidebar */}
         <div className="flex justify-between items-center mb-8">
