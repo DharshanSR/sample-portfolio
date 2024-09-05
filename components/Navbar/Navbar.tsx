@@ -1,11 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaHome, FaUser, FaServicestack, FaBlog, FaBrain, FaBriefcase, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaServicestack, FaBlog, FaBrain, FaBriefcase, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
 import contactPerson from '@/images/Graduate-Men.png';
-import { FaPhoneAlt } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const [nav, setNav] = useState(false);
@@ -94,7 +93,7 @@ const Navbar: React.FC = () => {
 
       {/* Hamburger Icon for Mobile */}
       <div onClick={handleClick} className="md:hidden z-10">
-        {!nav ? <FaBars size={25} /> : null}
+        {!nav ? <FaBars size={25} /> : <FaTimes size={25} />}
       </div>
 
       {/* Overlay for Mobile */}
@@ -102,8 +101,8 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-teal-600 p-8 transition-transform duration-500 ease-in-out z-50 ${nav ? 'transform translate-x-0' : 'transform -translate-x-full'
-          }`}
+        className={`fixed top-0 left-0 h-full w-80 bg-teal-600 p-8 transition-transform duration-500 ease-in-out z-50 ${nav ? 'translate-x-0' : '-translate-x-full'
+          } md:hidden`}
       >
         {/* Close Icon in Sidebar */}
         <div className="flex justify-between items-center mb-8">
@@ -156,6 +155,7 @@ const Navbar: React.FC = () => {
 
           <li className="flex justify-center mt-10">
             <button className="px-6 py-3 bg-white text-teal-600 font-semibold rounded hover:bg-gray-200 transition duration-300">
+              <FaPhoneAlt className="mr-2 inline-block" />
               Let&apos;s Talk
             </button>
           </li>

@@ -1,254 +1,175 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   FaTwitter,
-  FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  FaGlobe,
+  FaGithub,
+  FaMediumM,
+  FaHome,
+  FaUser,
+  FaServicestack,
+  FaBlog,
+  FaProjectDiagram,
+  FaArrowUp
 } from 'react-icons/fa';
+import Image from 'next/image';
+import ukImage from '@/images/uk.png';
 
 const Footer: React.FC = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) { // Adjust the scroll position value as needed
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-gray-900 text-white py-10 relative">
       <div className="container mx-auto px-4">
-        {/* Mobile View */}
-        <div className="md:hidden">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-24">
           {/* About Section */}
-          <div className="footer-about mb-8">
-            <h2 className="text-2xl font-bold mb-4">Impact</h2>
-            <p className="mb-4 text-gray-300 leading-relaxed">
-              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-              nada terra videa magna derita valies darta donna mare fermentum
-              iaculis eu non diam phasellus.
+          <div className="footer-about mb-8 md:mb-0">
+            <h2 className="text-2xl font-semibold mb-4">Impact</h2>
+            <p className="text-gray-400 mb-4">
+              Helping businesses achieve their goals with modern solutions and impactful designs.
+              Helping businesses achieve their goals with modern solutions and impactful designs.
             </p>
             <a
               href="/path-to-cv.pdf"
               download
-              className="inline-block bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition-colors duration-300 mt-4"
+              className="inline-block bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition-colors duration-300"
             >
               Download CV
             </a>
-            <div className="social-links flex space-x-4 mt-8">
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaTwitter size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaFacebookF size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaLinkedinIn size={20} />
-              </a>
-            </div>
-          </div>
-
-          {/* Contact Me Section */}
-          <div className="footer-contact mb-8">
-            <h4 className="text-xl font-semibold mb-4">Contact Me</h4>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <FaMapMarkerAlt size={20} className="text-gray-400" />
-                <p>123 Main Street, Suite 100</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaGlobe size={20} className="text-gray-400" />
-                <p>Country</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaPhoneAlt size={20} className="text-gray-400" />
-                <p>+1 123 456 7890</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaEnvelope size={20} className="text-gray-400" />
-                <p>
-                  <a
-                    href="mailto:info@impact.com"
-                    className="text-blue-400 hover:underline"
-                  >
-                    info@impact.com
-                  </a>
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Useful Links Section */}
-          <div className="footer-links mb-8">
-            <h4 className="text-xl font-semibold mb-4">Useful Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/">Home</Link>
+          <div className="footer-links ml-0 md:ml-24 mb-8 md:mb-0">
+            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-4 text-gray-400">
+              <li className="flex items-center space-x-2">
+                <FaHome className="text-teal-500" />
+                <Link href="/" className="hover:text-teal-500 transition-colors">Home</Link>
               </li>
-              <li>
-                <Link href="/about">About</Link>
+              <li className="flex items-center space-x-2">
+                <FaUser className="text-teal-500" />
+                <Link href="/about" className="hover:text-teal-500 transition-colors">About</Link>
               </li>
-              <li>
-                <Link href="/services">Services</Link>
+              <li className="flex items-center space-x-2">
+                <FaServicestack className="text-teal-500" />
+                <Link href="/services" className="hover:text-teal-500 transition-colors">Services</Link>
               </li>
-              <li>
-                <Link href="/blog">Blog</Link>
+              <li className="flex items-center space-x-2">
+                <FaBlog className="text-teal-500" />
+                <Link href="/blog" className="hover:text-teal-500 transition-colors">Blog</Link>
               </li>
-              <li>
-                <Link href="/skills">Skills</Link>
+              <li className="flex items-center space-x-2">
+                <FaProjectDiagram className="text-teal-500" />
+                <Link href="/portfolio" className="hover:text-teal-500 transition-colors">Portfolio</Link>
               </li>
-              <li>
-                <Link href="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact Me</Link>
+              <li className="flex items-center space-x-2">
+                <FaPhoneAlt className="text-teal-500" />
+                <Link href="/contact" className="hover:text-teal-500 transition-colors">Contact Me</Link>
               </li>
             </ul>
           </div>
+
+          {/* Follow Us and Contact Us Sections */}
+          <div className="flex flex-col space-y-8">
+            {/* Follow Us Section */}
+            <div className="flex flex-col items-start space-y-4">
+              <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
+              <div className="flex space-x-4">
+                <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-teal-500 transition-colors text-2xl">
+                  <FaLinkedinIn />
+                </a>
+                <a href="#" aria-label="GitHub" className="text-gray-400 hover:text-teal-500 transition-colors text-2xl">
+                  <FaGithub />
+                </a>
+                <a href="#" aria-label="Medium" className="text-gray-400 hover:text-teal-500 transition-colors text-2xl">
+                  <FaMediumM />
+                </a>
+                <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-teal-500 transition-colors text-2xl">
+                  <FaTwitter />
+                </a>
+                <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-teal-500 transition-colors text-2xl">
+                  <FaInstagram />
+                </a>
+              </div>
+            </div>
+
+            {/* Contact Us Section */}
+            <div className="flex flex-col items-start space-y-4">
+              <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
+              <div className="flex flex-col space-y-4">
+                <div className="flex items-center space-x-2">
+                  <FaEnvelope className="text-gray-400 hover:text-teal-500 transition-colors text-xl" />
+                  <a href="mailto:info@example.com" className="text-gray-400 hover:text-teal-500 transition-colors">
+                    info@example.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <FaPhoneAlt className="text-gray-400 hover:text-teal-500 transition-colors text-xl" />
+                  <a href="tel:+1234567890" className="text-gray-400 hover:text-teal-500 transition-colors">
+                    +123 456 7890
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Desktop View */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
-          <div className="footer-about">
-            <h2 className="text-2xl font-bold mb-4">Impact</h2>
-            <p className="mb-4 text-gray-300 leading-relaxed">
-              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-              nada terra videa magna derita valies darta donna mare fermentum
-              iaculis eu non diam phasellus.
+        {/* Horizontal Line */}
+        <hr className="my-8 border-gray-700" />
+
+        {/* Footer Bottom */}
+        <div className="flex flex-col items-center justify-center text-gray-500">
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-x-4 md:space-y-0">
+            <Image
+              src={ukImage}
+              alt="UK Country Outline"
+              width={60}
+              height={40}
+              className="inline-block"
+            />
+            <p className="text-center md:text-left">
+              <span className="text-gray-400">© {new Date().getFullYear()} Impact. All Rights Reserved.</span>
+              <br />
+              <span className="text-gray-400 font-bold">Designed by Ravindran Dharshan</span>
             </p>
-            <a
-              href="/path-to-cv.pdf"
-              download
-              className="inline-block bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition-colors duration-300 mt-4"
-            >
-              Download CV
-            </a>
-            <div className="social-links flex space-x-4 mt-8">
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaTwitter size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaFacebookF size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <FaLinkedinIn size={20} />
-              </a>
-            </div>
-          </div>
-
-          {/* Useful Links Section */}
-          <div className="footer-links md:ml-24">
-            <h4 className="text-xl font-semibold mb-4">Useful Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/services">Services</Link>
-              </li>
-              <li>
-                <Link href="/blog">Blog</Link>
-              </li>
-              <li>
-                <Link href="/skills">Skills</Link>
-              </li>
-              <li>
-                <Link href="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact Me</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Me Section */}
-          <div className="footer-contact md:-ml-6">
-            <h4 className="text-xl font-semibold mb-4">Contact Me</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center space-x-2">
-                <FaMapMarkerAlt size={20} className="text-gray-400" />
-                <p>123 Main Street, Suite 100</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaGlobe size={20} className="text-gray-400" />
-                <p>Country</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaPhoneAlt size={20} className="text-gray-400" />
-                <p>+1 123 456 7890</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaEnvelope size={20} className="text-gray-400" />
-                <p>
-                  <a
-                    href="mailto:info@impact.com"
-                    className="text-blue-400 hover:underline"
-                  >
-                    info@impact.com
-                  </a>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Separator Line */}
-        <hr className="mb-8 mt-10 border-gray-600" />
-
-        {/* All Rights Reserved Section */}
-        <div className="text-center">
-          <p>
-            © {new Date().getFullYear()} <strong className="text-teal-400">Impact</strong>.
-            All Rights Reserved.
-          </p>
-          <p className="text-gray-400 mt-2">
-            Designed by{' '}
-            <a
-              href="https://yourdesignagency.com"
-              className="text-blue-400 hover:underline"
-            >
-              Ravindran Dharshan
-            </a>
-          </p>
-        </div>
+        {/* Scroll to Top Arrow */}
+        {showScrollTop && (
+          <button 
+            onClick={scrollToTop} 
+            className="fixed bottom-4 right-4 bg-teal-500 text-white p-3 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300"
+            aria-label="Scroll to top"
+          >
+            <FaArrowUp className="text-xl" />
+          </button>
+        )}
       </div>
     </footer>
   );
