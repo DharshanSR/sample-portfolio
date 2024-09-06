@@ -13,13 +13,10 @@
     "@react-three/drei": "^9.110.0",
     "@react-three/fiber": "^8.17.5",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.7.2",
-    "chart": "^0.1.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dharshan-portfolio": "file:",
     "framer-motion": "^11.3.22",
-    "gsap": "^3.12.5",
     "js": "^0.1.0",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.416.0",
@@ -44,7 +41,8 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.167.1",
-    "three-globe": "^2.31.1"
+    "three-globe": "^2.31.1",
+    "webpack": "^5.94.0"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",
