@@ -18,7 +18,7 @@ const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
 
 const services = [
   {
-    title: "Full Stack Development",
+    title: "Full Stack WedDevelopment",
     description: "Developing responsive, high-performance web applications with React, Next.js, TypeScript, Tailwind CSS, Node.js, and Express. Utilizing MongoDB, PostgreSQL, Docker, and CI/CD for robust, scalable solutions. Focused on seamless user experiences and scalable backend functionality.",
     animationData: webDevelopment,
     link: "/web-development",
@@ -72,14 +72,12 @@ const Expertise: React.FC = () => {
     visible: { opacity: 1, scale: 1 },
   };
   
-  
-  
   return (
     <section
-      id="about"
+      id="services"
       className="py-20 relative bg-customBlue"
     >
-      <div className="container mx-auto text-center py-20">
+      <div className="container mx-auto text-center py-24">
         <div className="flex flex-col items-center mb-12">
           <h1 className="font-extrabold text-2xl text-white mb-4 -mt-24">Expertise</h1>
           <Image

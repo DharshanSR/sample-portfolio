@@ -126,14 +126,8 @@ const Blog: React.FC = () => {
     <section id="blogs" className="relative bg-customBlue py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex flex-col mb-12">
-        <Image
-            src={blogManImage}
-            alt="Expertise Icon"
-            width={250}
-            height={250}
-            className="mb-2 -mt-32"
-          />
-          <h1 className="font-extrabold text-2xl text-white mb-4 -mt-40">Blogs</h1>
+
+          <h1 className="font-extrabold text-2xl text-white mb-4 mt-12">Blogs</h1>
           <h2 className="text-5xl font-extrabold text-customDarkBlue">My Articles</h2>
         </div>
         <motion.div

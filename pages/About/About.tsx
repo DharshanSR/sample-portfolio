@@ -67,10 +67,10 @@ const About: React.FC = () => {
           {/* Image */}
           <motion.div
             ref={imageRef}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={imageInView ? { opacity: 1, scale: 1 } : {}}
-            whileHover={{ scale: 1.05, rotate: 2 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+            animate={imageInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="w-full md:w-1/2 lg:w-2/3 flex justify-center items-center mb-8 md:mb-0 md:mr-8 p-4"
           >
             <Image
@@ -82,9 +82,8 @@ const About: React.FC = () => {
             />
           </motion.div>
 
-
           {/* Text Content */}
-          <div className="md:w-2/3 text-customGrayBlue p-4 md:p-8 mt-12 font-semibold">
+          <div className="md:w-[90%] text-customGrayBlue p-4 md:p-8 mt-12 font-semibold">
             <AnimatedParagraph
               text="Hello, I’m Ravindran Dharshan, a passionate software engineering student currently based in London, UK. I specialize in full-stack development, with a strong emphasis on frontend technologies such as React, Next.js, and Tailwind CSS, alongside robust backend capabilities with Node.js and Express."
               delay={0.2}
@@ -98,16 +97,14 @@ const About: React.FC = () => {
               delay={0.6}
             />
           </div>
-
         </div>
-
 
         {/* Job Experience Section */}
         <motion.div
           ref={experienceRef}
-          initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-          animate={experienceInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-          transition={{ duration: 1, type: "spring", stiffness: 70 }}
+          initial={{ opacity: 0, scale: 0.3, skew: 15 }}
+          animate={experienceInView ? { opacity: 1, scale: 1, skew: 0 } : {}}
+          transition={{ duration: 1.2, type: "spring", stiffness: 80 }}
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 mt-8 text-center">Experience</h2>
@@ -115,9 +112,9 @@ const About: React.FC = () => {
             {/* Text Content */}
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.div
-                initial={{ opacity: 0, y: 50, rotate: 10 }}
-                animate={experienceInView ? { opacity: 1, y: 0, rotate: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 70, skew: 20 }}
+                animate={experienceInView ? { opacity: 1, y: 0, skew: 0 } : {}}
+                transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
                 className="bg-customDarkBlue p-8 rounded-lg shadow-lg flex flex-col items-center md:mr-8 transform transition-transform"
               >
                 {/* Centered Image */}
@@ -132,9 +129,9 @@ const About: React.FC = () => {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.div
-                initial={{ opacity: 0, y: 50, rotate: 10 }}
-                animate={experienceInView ? { opacity: 1, y: 0, rotate: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 70, skew: -10 }}
+                animate={experienceInView ? { opacity: 1, y: 0, skew: 0 } : {}}
+                transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
                 className="bg-customDarkBlue p-8 rounded-lg shadow-lg flex flex-col items-center md:mr-8 transform transition-transform"
               >
                 {/* Centered Image */}
@@ -147,13 +144,12 @@ const About: React.FC = () => {
               </motion.div>
             </div>
 
-
             {/* Image */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={experienceInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="flex-shrink-0 w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 relative"
+              initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+              animate={experienceInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+              transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+              className="flex-shrink-0 w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 relative"
             >
               <Image
                 src={expericeImage}
@@ -166,39 +162,41 @@ const About: React.FC = () => {
           </div>
         </motion.div>
 
-        {/*education section */}
+
+        {/* Education Section */}
         <motion.div
           ref={educationRef}
-          initial={{ opacity: 0 }}
-          animate={educationInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+          animate={educationInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+          transition={{ duration: 1, type: "spring", stiffness: 80 }}
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 mt-8 text-center">Education</h2>
+
           {/* 3D Graduate Image */}
           <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={educationInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6 }}
-              className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center -mt-8 mb-4"
-            >
-              <Image
-                src={graduate3DImage}
-                alt="3D Graduate Image"
-                width={700} // Adjusted width for responsiveness
-                height={700} // Adjusted height to match width
-                className=" object-cover"
-              />
-            </motion.div>
+            initial={{ opacity: 0, y: -50, rotate: 5 }}
+            animate={educationInView ? { opacity: 1, y: 0, rotate: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center -mt-8 mb-4"
+          >
+            <Image
+              src={graduate3DImage}
+              alt="3D Graduate Image"
+              width={700}
+              height={700}
+              className=" object-cover"
+            />
+          </motion.div>
 
           <div className="flex flex-wrap justify-center items-center gap-8">
             {/* Education Items */}
             <div className="flex flex-wrap justify-center gap-4 text-center">
               {/* Education Item 1 */}
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                initial={{ opacity: 0, y: 100, skew: 10 }}
+                animate={{ opacity: 1, y: 0, skew: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="bg-gray-800 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#5396d5] hover:via-[#2d8fb3] hover:to-[#35b3af] w-full md:w-[calc(33.33%-1rem)]"
               >
                 <div className="flex items-center justify-center mb-4">
@@ -211,9 +209,9 @@ const About: React.FC = () => {
 
               {/* Education Item 2 */}
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0, y: 100, skew: -10 }}
+                animate={{ opacity: 1, y: 0, skew: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 className="bg-gray-800 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#5396d5] hover:via-[#2d8fb3] hover:to-[#35b3af] w-full md:w-[calc(33.33%-1rem)]"
               >
                 <div className="flex items-center justify-center mb-4">
@@ -226,9 +224,9 @@ const About: React.FC = () => {
 
               {/* Education Item 3 */}
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                initial={{ opacity: 0, y: 100, rotate: 10 }}
+                animate={{ opacity: 1, y: 0, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                 className="bg-gray-800 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#5396d5] hover:via-[#2d8fb3] hover:to-[#35b3af] w-full md:w-[calc(33.33%-1rem)]"
               >
                 <div className="flex items-center justify-center mb-4">
@@ -240,12 +238,9 @@ const About: React.FC = () => {
               </motion.div>
 
               {/* Additional Education Items can go here */}
-              {/* They will automatically wrap to the next row if there are more than three items */}
             </div>
           </div>
         </motion.div>
-
-
 
       </div>
     </section>
