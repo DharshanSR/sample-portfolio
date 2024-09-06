@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
       <h1 className="text-2xl md:text-3xl font-bold">Impact</h1>
 
       {/* Center - Nav Links for Desktop */}
-      <ul className={`hidden md:flex space-x-6 ${nav && isMobile ? 'hidden' : ''}`}>
+      <ul className={`hidden md:flex space-x-8 ${nav && isMobile ? 'hidden' : ''}`}>
         <li className={getLinkClasses('home')}>
           <Link href="#home">Home</Link>
         </li>
@@ -84,8 +84,8 @@ const Navbar: React.FC = () => {
         <li className={getLinkClasses('services')}>
           <Link href="#services">Services</Link>
         </li>
-        <li className={getLinkClasses('blog')}>
-          <Link href="#blog">Blog</Link>
+        <li className={getLinkClasses('blogs')}>
+          <Link href="#blogs">Blog</Link>
         </li>
         <li className={getLinkClasses('skills')}>
           <Link href="#skills">Skills</Link>
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
 
           <li onClick={handleClick} className="flex items-center space-x-2 text-white hover:text-yellow-300">
             <FaBlog />
-            <Link href="#blog">Blog</Link>
+            <Link href="#blogs">Blog</Link>
           </li>
           <li className="w-full h-[2px] bg-white opacity-20"></li>
 
