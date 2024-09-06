@@ -10,17 +10,18 @@ const Navbar: React.FC = () => {
   const [nav, setNav] = useState(false);
   const [bgColor, setBgColor] = useState('bg-teal-600');
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const handleClick = () => setNav(!nav);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section');
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const scrollThreshold = 50;
 
       setBgColor(scrollPosition > scrollThreshold ? 'bg-teal-800' : 'bg-teal-600');
-
+      
+      const sections = document.querySelectorAll('section');
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -35,12 +36,28 @@ const Navbar: React.FC = () => {
       });
     };
 
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobile(false);
+        if (nav) {
+          setNav(false); // Close mobile menu when switching to desktop
+        }
+      } else {
+        setIsMobile(true);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    // Initial check on component mount
+    handleResize();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [nav]);
 
   const getLinkClasses = (section: string) => {
     return `relative ${activeSection === section ? 'text-yellow-300' : 'text-white'} hover:text-yellow-300 
@@ -57,7 +74,7 @@ const Navbar: React.FC = () => {
       <h1 className="text-2xl md:text-3xl font-bold">Impact</h1>
 
       {/* Center - Nav Links for Desktop */}
-      <ul className="hidden md:flex space-x-6">
+      <ul className={`hidden md:flex space-x-6 ${nav && isMobile ? 'hidden' : ''}`}>
         <li className={getLinkClasses('home')}>
           <Link href="#home">Home</Link>
         </li>
@@ -93,7 +110,7 @@ const Navbar: React.FC = () => {
 
       {/* Hamburger Icon for Mobile */}
       <div onClick={handleClick} className="md:hidden z-10">
-        {!nav ? <FaBars size={25} /> : <FaTimes size={25} />}
+        <FaBars size={25} />
       </div>
 
       {/* Overlay for Mobile */}
@@ -101,8 +118,8 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-teal-600 p-8 transition-transform duration-500 ease-in-out z-50 ${nav ? 'translate-x-0' : '-translate-x-full'
-          } md:hidden`}
+        className={`fixed top-0 left-0 h-full w-80 bg-teal-600 p-8 transition-transform duration-300 ease-in-out z-50 ${nav ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         {/* Close Icon in Sidebar */}
         <div className="flex justify-between items-center mb-8">

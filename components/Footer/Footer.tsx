@@ -19,13 +19,14 @@ import {
 } from 'react-icons/fa';
 import Image from 'next/image';
 import ukImage from '@/images/uk.png';
+import Arrow from '@/animation/arrow-animation.json';
 
 const Footer: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) { // Adjust the scroll position value as needed
+      if (window.scrollY > 300) {
         setShowScrollTop(true);
       } else {
         setShowScrollTop(false);
@@ -51,7 +52,6 @@ const Footer: React.FC = () => {
           <div className="footer-about mb-8 md:mb-0">
             <h2 className="text-2xl font-semibold mb-4">Impact</h2>
             <p className="text-gray-400 mb-4">
-              Helping businesses achieve their goals with modern solutions and impactful designs.
               Helping businesses achieve their goals with modern solutions and impactful designs.
             </p>
             <a
@@ -164,10 +164,13 @@ const Footer: React.FC = () => {
         {showScrollTop && (
           <button 
             onClick={scrollToTop} 
-            className="fixed bottom-4 right-4 bg-teal-500 text-white p-3 rounded-full shadow-lg hover:bg-teal-600 transition-colors duration-300"
+            className={`fixed bottom-4 right-4 bg-teal-500 text-white p-3 rounded-full shadow-lg 
+                        hover:bg-teal-600 transition-all duration-300 
+                        transform ${showScrollTop ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
+            style={{ transition: 'opacity 0.5s ease, transform 0.5s ease' }}
             aria-label="Scroll to top"
           >
-            <FaArrowUp className="text-xl" />
+            <FaArrowUp className="text-2xl" />
           </button>
         )}
       </div>
